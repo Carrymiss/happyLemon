@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -15,11 +16,32 @@ func main() {
 	var num3 int32 = 99
 	var num4 string = fmt.Sprintf("%d", num3)
 	fmt.Println("num4=", num4)
+	// 第一个参数是要转换的值，第二个参数是转换的进制
+	num6 := strconv.FormatInt(int64(num3), 10)
+	fmt.Println("num6=", num6)
+	num7 := strconv.Itoa(int(num3))
+	fmt.Println("num7=", num7)
 
 	// string -> int
 	var str string = "123"
 	var num5 int
+	var num8 int64
+	var num9 int
 	fmt.Sscanf(str, "%d", &num5)
-	fmt.Println("num5=", num5)
+	num8, _ = strconv.ParseInt(str, 10, 64)
+	num9 = int(num8)
+	fmt.Println("num5=", num5, "num8=", num8, "num9=", num9)
+
+	// string -> float
+	var str1 string = "123.456"
+	var f1 float64
+	f1, _ = strconv.ParseFloat(str1, 64)
+	fmt.Println("f1=", f1)
+
+	// string -> bool
+	var str2 string = "true"
+	var b bool
+	b, _ = strconv.ParseBool(str2) //这里的_是一个占位符，用于忽略函数返回的错误值。如果str2不能被解析为一个布尔值，ParseBool函数会返回一个错误，但在这里，我们选择忽略这个错误。
+	fmt.Println("b=", b)
 
 }
