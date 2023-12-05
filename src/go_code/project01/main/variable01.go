@@ -30,8 +30,12 @@ func main() {
 	fmt.Println("n1=", n1, "n2=", n2, "n3=", n3)
 
 	// 查看一个变量占用的字节大小和数据类型
-	var n4 int64 = 10
+	var n4 int64 = 100
 	// unsafe.Sizeof(n4)是unsafe包的一个函数，可以返回n4变量占用的字节数
-	fmt.Printf("n4的类型是%T，占用的字节数是%d", n4, unsafe.Sizeof(n4))
+	fmt.Printf("n4的类型是%T，占用的字节数是%d \n", n4, unsafe.Sizeof(n4))
+
+	// 浮点类型
+	var price float32 = 89.12
+	fmt.Println("price=", price)
 
 }
