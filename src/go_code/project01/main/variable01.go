@@ -77,4 +77,9 @@ func main() {
 	fmt.Println("b1=", b1, "b2=", b2)
 	// 布尔类型占用空间是1个字节
 	fmt.Println("b1占用的空间是", unsafe.Sizeof(b1))
+
+	// 字符串
+	var address string = "北京长城 110 hello world"
+	fmt.Println("address=", address)
+
 }
