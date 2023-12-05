@@ -25,8 +25,12 @@ func main() {
 	// string -> int
 	var str string = "123"
 	var num5 int
+	var num8 int64
+	var num9 int
 	fmt.Sscanf(str, "%d", &num5)
-	fmt.Println("num5=", num5)
+	num8, _ = strconv.ParseInt(str, 10, 64)
+	num9 = int(num8)
+	fmt.Println("num5=", num5, "num8=", num8, "num9=", num9)
 
 	// string -> bool
 	var str2 string = "true"
