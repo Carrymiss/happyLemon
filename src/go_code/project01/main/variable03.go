@@ -38,5 +38,4 @@ func main() {
 	fmt.Println("num4=", num4) // 11
 	num4--
 	fmt.Println("num4=", num4) // 10
-
 }
