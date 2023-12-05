@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	test01()
 	test02()
+	test03()
 }
 
 func test01() {
@@ -20,4 +21,13 @@ func test02() {
 	var huashi float32 = 134.5
 	var sheshi float32 = 5.0 / 9 * (huashi - 100)
 	fmt.Printf("华氏温度 %v 对应的摄氏温度为 %v \n", huashi, sheshi)
+}
+func test03() {
+	// 有两个变量，a和b，要求将其进行交换，但是不允许使用中间变量，最终打印结果
+	var a int = 10
+	var b int = 20
+	a = a + b
+	b = a - b
+	a = a - b
+	fmt.Println("a=", a, "b=", b)
 }
