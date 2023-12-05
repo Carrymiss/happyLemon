@@ -82,4 +82,8 @@ func main() {
 	var address string = "北京长城 110 hello world"
 	fmt.Println("address=", address)
 
+	//使用反引号输出多行的字符串
+	var str = `	var address string = "北京长城 110 hello world"
+	fmt.Println("address=", address)`
+	fmt.Println("str=", str)
 }
