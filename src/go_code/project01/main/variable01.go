@@ -63,4 +63,7 @@ func main() {
 	var c3 rune = '北'
 	fmt.Println("c3=", c3)
 	fmt.Printf("c3=%c \n", c3)
+
+	var c4 int = 22269
+	fmt.Printf("c4=%c \n", c4)
 }
