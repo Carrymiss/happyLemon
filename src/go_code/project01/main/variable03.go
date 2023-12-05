@@ -17,4 +17,17 @@ func main() {
 	var ptr1 *int = &num1
 	*ptr1 = 10 // *ptr1代表取出ptr1指针指向的值
 	fmt.Println("num1=", num1)
+
+	// 算数运算符
+	// + - * / % ++ --
+	fmt.Println(10 / 4) // 2
+
+	var num2 float32 = 10 / 4
+	fmt.Println(num2) // 2
+
+	fmt.Println(10 % 4) // 2
+
+	num3 := 10.0 / 4
+	fmt.Println(num3) // 2.5
+
 }
