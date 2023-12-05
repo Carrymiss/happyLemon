@@ -70,4 +70,10 @@ func main() {
 	// 字符串类型可以按照码值来进行运算
 	var c5 = 10 + 'a'
 	fmt.Println("c5=", c5)
+
+	// 布尔类型
+	var b1 bool = true
+	var b2 bool = false
+	fmt.Println("b1=", b1, "b2=", b2)
+
 }
