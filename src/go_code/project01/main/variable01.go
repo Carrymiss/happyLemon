@@ -54,10 +54,13 @@ func main() {
 	// 如果我们保存的字符在ascII码表中对应的是整数，因此，可以保存到byte
 	// 如果我们保存的字符对应的码值大于255，我们可以考虑使用int保存
 	// 如果需要保存到字符，我们直接使用rune即可
+	// 可以使用fmt.Printf("%c", c1)来输出字符
 	var c1 byte = 'a'
 	var c2 byte = '0' // 字符0
 	fmt.Println("c1=", c1, "c2=", c2)
+	fmt.Printf("c1=%c c2=%c \n", c1, c2)
 
 	var c3 rune = '北'
 	fmt.Println("c3=", c3)
+	fmt.Printf("c3=%c \n", c3)
 }
