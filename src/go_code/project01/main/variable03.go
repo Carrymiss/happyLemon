@@ -79,5 +79,13 @@ func main() {
 	fmt.Println("num7=", num7) // 10
 	num7 %= 2
 	fmt.Println("num7=", num7) // 0
+	// 赋值函数运算
+	var num8 int = 10
+	num8 = test(num8)
+	fmt.Println("num8=", num8) // 20
 
+}
+
+func test(num int) int {
+	return num * 2
 }
