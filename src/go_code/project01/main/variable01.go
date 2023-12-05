@@ -83,6 +83,7 @@ func main() {
 	fmt.Println("address=", address)
 
 	//使用反引号输出多行的字符串
+	//TODO 这个功能好像不太行，可以试试高版本的go
 	var str = `var address string = "北京长城 110 hello world" fmt.Println("address=", address)`
 	fmt.Println("str=", str)
 
