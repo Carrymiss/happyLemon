@@ -6,6 +6,7 @@ func main() {
 	test01()
 	test02()
 	test03()
+	test04()
 }
 
 func test01() {
@@ -30,4 +31,17 @@ func test03() {
 	b = a - b
 	a = a - b
 	fmt.Println("a=", a, "b=", b)
+}
+
+func test04() {
+	// 求两个数的最大值
+	var num1 int = 10
+	var num2 int = 20
+	var max int
+	if num1 > num2 {
+		max = num1
+	} else {
+		max = num2
+	}
+	fmt.Println("max=", max)
 }
