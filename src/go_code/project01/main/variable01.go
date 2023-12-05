@@ -46,8 +46,8 @@ func main() {
 	fmt.Println("num2=", num2)
 
 	// 科学计数法
-	num3 := 1.2345e2
-	fmt.Println("num3=", num3)
-	num4 := 1.2345e2
-	fmt.Println("num4=", num4)
+	num3 := 1.2345e2  // 1.2345 * 10的2次方
+	num4 := 1.2345e-2 // 1.2345 / 10的2次方
+	fmt.Println("num3=", num3, "num4=", num4)
+
 }
