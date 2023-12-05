@@ -38,4 +38,16 @@ func main() {
 	fmt.Println("num4=", num4) // 11
 	num4--
 	fmt.Println("num4=", num4) // 10
+
+	// 关系运算符
+	// == != > < >= <=
+	var num5 int = 8
+	var num6 int = 9
+	fmt.Println(num5 == num6) // false
+	fmt.Println(num5 != num6) // true
+	fmt.Println(num5 > num6)  // false
+	fmt.Println(num5 < num6)  // true
+	fmt.Println(num5 >= num6) // false
+	fmt.Println(num5 <= num6) // true
+
 }
