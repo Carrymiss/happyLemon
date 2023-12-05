@@ -42,4 +42,12 @@ func main() {
 	var num1 = 1.1
 	fmt.Printf("num1的数据类型是%T \n", num1)
 
+	var num2 = .1
+	fmt.Println("num2=", num2)
+
+	// 科学计数法
+	num3 := 1.2345e2
+	fmt.Println("num3=", num3)
+	num4 := 1.2345e2
+	fmt.Println("num4=", num4)
 }
