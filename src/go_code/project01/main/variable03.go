@@ -84,6 +84,17 @@ func main() {
 	num8 = test(num8)
 	fmt.Println("num8=", num8) // 20
 
+	// 位运算符
+	// & | ^ << >>
+
+	// 其他运算符
+	// & *
+	// & 返回变量存储地址，&a返回变量a的地址
+	// * 指针变量，*a指针变量a对应的值
+	var num9 int = 10
+	fmt.Println("num9的地址是", &num9)
+	var ptr2 *int = &num9
+	fmt.Println("ptr2的值是", ptr2)
 }
 
 func test(num int) int {
