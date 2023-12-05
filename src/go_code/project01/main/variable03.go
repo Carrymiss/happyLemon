@@ -50,4 +50,20 @@ func main() {
 	fmt.Println(num5 >= num6) // false
 	fmt.Println(num5 <= num6) // true
 
+	// 逻辑运算符
+	// && || !
+	var age int = 40
+	if age > 30 && age < 50 {
+		fmt.Println("ok1")
+	}
+	if age > 30 || age < 50 {
+		fmt.Println("ok2")
+	}
+	if age > 30 && age < 50 && age != 40 {
+		fmt.Println("ok3")
+	}
+	if !(age > 30 && age < 50) {
+		fmt.Println("ok4")
+	}
+
 }
