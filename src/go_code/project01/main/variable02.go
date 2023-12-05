@@ -32,6 +32,12 @@ func main() {
 	num9 = int(num8)
 	fmt.Println("num5=", num5, "num8=", num8, "num9=", num9)
 
+	// string -> float
+	var str1 string = "123.456"
+	var f1 float64
+	f1, _ = strconv.ParseFloat(str1, 64)
+	fmt.Println("f1=", f1)
+
 	// string -> bool
 	var str2 string = "true"
 	var b bool
