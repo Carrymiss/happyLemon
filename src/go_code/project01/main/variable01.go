@@ -66,4 +66,8 @@ func main() {
 
 	var c4 int = 22269
 	fmt.Printf("c4=%c \n", c4)
+
+	// 字符串类型可以按照码值来进行运算
+	var c5 = 10 + 'a'
+	fmt.Println("c5=", c5)
 }
