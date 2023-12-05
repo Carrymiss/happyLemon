@@ -21,13 +21,22 @@ func main() {
 	// 算数运算符
 	// + - * / % ++ --
 	fmt.Println(10 / 4) // 2
-
 	var num2 float32 = 10 / 4
-	fmt.Println(num2) // 2
-
-	fmt.Println(10 % 4) // 2
-
+	fmt.Println("num2=", num2) // 2
 	num3 := 10.0 / 4
-	fmt.Println(num3) // 2.5
+	fmt.Println("num3=", num3) // 2.5
+
+	// 取模
+	fmt.Println(10 % 3)   // 1
+	fmt.Println(-10 % 3)  // -1
+	fmt.Println(10 % -3)  // 1
+	fmt.Println(-10 % -3) // -1
+
+	// ++ --
+	var num4 int = 10
+	num4++
+	fmt.Println("num4=", num4) // 11
+	num4--
+	fmt.Println("num4=", num4) // 10
 
 }
