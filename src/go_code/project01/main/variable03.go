@@ -66,4 +66,18 @@ func main() {
 		fmt.Println("ok4")
 	}
 
+	// 赋值运算符
+	// = += -= *= /= %=
+	var num7 int = 10
+	num7 += 2
+	fmt.Println("num7=", num7) // 12
+	num7 -= 2
+	fmt.Println("num7=", num7) // 10
+	num7 *= 2
+	fmt.Println("num7=", num7) // 20
+	num7 /= 2
+	fmt.Println("num7=", num7) // 10
+	num7 %= 2
+	fmt.Println("num7=", num7) // 0
+
 }
