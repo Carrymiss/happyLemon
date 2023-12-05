@@ -75,5 +75,6 @@ func main() {
 	var b1 bool = true
 	var b2 bool = false
 	fmt.Println("b1=", b1, "b2=", b2)
-
+	// 布尔类型占用空间是1个字节
+	fmt.Println("b1占用的空间是", unsafe.Sizeof(b1))
 }
