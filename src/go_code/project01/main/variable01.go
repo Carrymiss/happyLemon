@@ -34,8 +34,12 @@ func main() {
 	// unsafe.Sizeof(n4)是unsafe包的一个函数，可以返回n4变量占用的字节数
 	fmt.Printf("n4的类型是%T，占用的字节数是%d \n", n4, unsafe.Sizeof(n4))
 
-	// 浮点类型
+	// 浮点类型 可能会有精度损失
 	var price float32 = 89.12
 	fmt.Println("price=", price)
+
+	// 默认的是float64
+	var num1 = 1.1
+	fmt.Printf("num1的数据类型是%T \n", num1)
 
 }
