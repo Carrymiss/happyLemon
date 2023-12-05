@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"happyLemon/src/go_code/project01/demo01"
 	"unsafe"
 )
 
@@ -87,4 +88,6 @@ func main() {
 	var str = `var address string = "北京长城 110 hello world" fmt.Println("address=", address)`
 	fmt.Println("str=", str)
 
+	// 访问公有变量
+	fmt.Println("HeroName=", demo01.HeroName)
 }
