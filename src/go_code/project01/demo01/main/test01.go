@@ -8,6 +8,7 @@ func main() {
 	test03()
 	test04()
 	test05()
+	test06()
 }
 
 func test01() {
@@ -57,5 +58,26 @@ func test05() {
 		fmt.Println("你年龄大于18，要对自己的行为负责")
 	} else {
 		fmt.Println("你的年龄小于18，快去学习")
+	}
+}
+
+func test06() {
+	// 接受一个字符，表示用户的评价，A、B、C、D、E，如果是A，输出评价优秀，如果是B，输出评价良好，如果是C，输出评价及格，如果是D，输出评价不及格，如果是E，输出评价不合格，其他输出评价输入有误
+	var score string
+	fmt.Println("请输入评价")
+	fmt.Scanln(&score)
+	switch score {
+	case "A":
+		fmt.Println("评价优秀")
+	case "B":
+		fmt.Println("评价良好")
+	case "C":
+		fmt.Println("评价及格")
+	case "D":
+		fmt.Println("评价不及格")
+	case "E":
+		fmt.Println("评价不合格")
+	default:
+		fmt.Println("评价输入有误")
 	}
 }
