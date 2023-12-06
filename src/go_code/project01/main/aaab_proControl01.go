@@ -29,4 +29,10 @@ func test04() {
 		// 在输出里面加上i，可以看到i的变化
 		fmt.Println("hello world", i)
 	}
+	// for循环的第二种写法
+	var i int = 1
+	for i <= 10 {
+		fmt.Println("hello world", i)
+		i++
+	}
 }
