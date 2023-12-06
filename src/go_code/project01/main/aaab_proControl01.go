@@ -62,6 +62,11 @@ func test04() {
 }
 
 func test05() {
+	var str1 string = "hello world"
+	for i := 0; i < len(str1); i++ {
+		fmt.Printf("%c \n", str1[i])
+	}
+
 	// for range循环
 	str := "hello world"
 	for index, val := range str {
