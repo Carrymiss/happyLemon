@@ -46,4 +46,17 @@ func test04() {
 			break
 		}
 	}
+
+	// for循环的第四种写法
+	var num int = 5
+	for i := 1; i <= num; i++ {
+		for j := 1; j <= i; j++ {
+			fmt.Printf("%v * %v = %v \t", j, i, i*j)
+		}
+		fmt.Println()
+	}
+}
+
+func test05() {
+
 }
