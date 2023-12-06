@@ -84,4 +84,9 @@ func test05() {
 	for i := 0; i < len(str3); i++ {
 		fmt.Printf("字符=%c \n", str3[i])
 	}
+
+	// 使用for range遍历带有中文的字符串
+	for index, val := range str3 {
+		fmt.Printf("index=%v val=%c \n", index, val)
+	}
 }
