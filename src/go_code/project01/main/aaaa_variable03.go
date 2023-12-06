@@ -86,6 +86,13 @@ func main() {
 
 	// 位运算符
 	// & | ^ << >>
+	var num10 int = 2
+	fmt.Println(num10 << 3) // 2 * 2^3 = 16
+	fmt.Println(num10 >> 3) // 2 / 2^3 = 0
+	var num11 int = 3
+	fmt.Println(num10 & num11) // 2 & 3 = 2
+	fmt.Println(num10 | num11) // 2 | 3 = 3
+	fmt.Println(num10 ^ num11) // 2 ^ 3 = 1
 
 	// 其他运算符
 	// & *
