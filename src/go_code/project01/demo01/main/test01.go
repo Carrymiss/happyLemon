@@ -7,6 +7,7 @@ func main() {
 	test02()
 	test03()
 	test04()
+	test05()
 }
 
 func test01() {
@@ -44,4 +45,17 @@ func test04() {
 		max = num2
 	}
 	fmt.Println("max=", max)
+}
+
+func test05() {
+	// 输入年龄，如果大于18岁，输出你年龄大于18，要对自己的行为负责
+	// 如果小于18岁，输出你的年龄小于18，快去学习
+	var age int
+	fmt.Println("请输入年龄")
+	fmt.Scanln(&age)
+	if age > 18 {
+		fmt.Println("你年龄大于18，要对自己的行为负责")
+	} else {
+		fmt.Println("你的年龄小于18，快去学习")
+	}
 }
