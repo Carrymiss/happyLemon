@@ -9,6 +9,7 @@ func main() {
 	test04()
 	test05()
 	test06()
+	test07()
 }
 
 func test01() {
@@ -79,5 +80,30 @@ func test06() {
 		fmt.Println("评价不合格")
 	default:
 		fmt.Println("评价输入有误")
+	}
+}
+
+func test07() {
+	// 根据用户输入显示对应的星期时间，如果星期一显示干煸豆角，如果星期二显示鱼香肉丝，如果星期三显示宫保鸡丁，如果星期四显示酸菜鱼，如果星期五显示水煮肉片，如果星期六显示水煮鱼，如果星期日显示烤鸭
+	var week string
+	fmt.Println("请输入星期")
+	fmt.Scanln(&week)
+	switch week {
+	case "星期一":
+		fmt.Println("干煸豆角")
+	case "星期二":
+		fmt.Println("鱼香肉丝")
+	case "星期三":
+		fmt.Println("宫保鸡丁")
+	case "星期四":
+		fmt.Println("酸菜鱼")
+	case "星期五":
+		fmt.Println("水煮肉片")
+	case "星期六":
+		fmt.Println("水煮鱼")
+	case "星期日":
+		fmt.Println("烤鸭")
+	default:
+		fmt.Println("输入有误")
 	}
 }
