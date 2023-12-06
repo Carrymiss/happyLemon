@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
 	test01()
@@ -12,6 +16,7 @@ func main() {
 	test07()
 	test08()
 	test09()
+	test10()
 }
 
 func test01() {
@@ -131,5 +136,23 @@ func test09() {
 			fmt.Printf("%v * %v = %v \t", j, i, i*j)
 		}
 		fmt.Println()
+	}
+}
+
+func test10() {
+	// 随机生成1-100的数，直到生成99这个数，看看你一共用了几次
+	var count int = 0
+	for {
+		// 设置纳秒级种子
+		rand.Seed(time.Now().UnixNano())
+		count++
+		fmt.Println("用了", count, "次")
+		num := rand.Intn(100) + 1 // 生成0-99的随机数
+		if num == 99 {
+			fmt.Println("生成了99，退出")
+			break
+		} else {
+			fmt.Println("生成的数是", num)
+		}
 	}
 }
