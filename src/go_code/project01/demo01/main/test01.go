@@ -11,6 +11,7 @@ func main() {
 	test06()
 	test07()
 	test08()
+	test09()
 }
 
 func test01() {
@@ -118,6 +119,16 @@ func test08() {
 		}
 		for k := 1; k <= 2*i-1; k++ {
 			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+}
+
+func test09() {
+	// 九九乘法表
+	for i := 1; i <= 9; i++ {
+		for j := 1; j <= i; j++ {
+			fmt.Printf("%v * %v = %v \t", j, i, i*j)
 		}
 		fmt.Println()
 	}
