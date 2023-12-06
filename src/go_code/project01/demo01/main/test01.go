@@ -10,6 +10,7 @@ func main() {
 	test05()
 	test06()
 	test07()
+	test08()
 }
 
 func test01() {
@@ -105,5 +106,19 @@ func test07() {
 		fmt.Println("烤鸭")
 	default:
 		fmt.Println("输入有误")
+	}
+}
+
+func test08() {
+	// 打印金字塔
+	var totalLevel int = 10
+	for i := 1; i <= totalLevel; i++ {
+		for j := 1; j <= totalLevel-i; j++ {
+			fmt.Print(" ")
+		}
+		for k := 1; k <= 2*i-1; k++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
 	}
 }
