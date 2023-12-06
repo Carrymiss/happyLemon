@@ -35,4 +35,15 @@ func test04() {
 		fmt.Println("hello world", i)
 		i++
 	}
+
+	// for循环的第三种写法 无限循环 一般配合break使用
+	var j int = 1
+	for {
+		if j <= 10 {
+			fmt.Println("hello world", j)
+			j++
+		} else {
+			break
+		}
+	}
 }
