@@ -77,4 +77,11 @@ func test05() {
 	for _, val := range str {
 		fmt.Printf("val=%c \n", val)
 	}
+
+	// 使用切片遍历带有中文的字符串
+	str2 := "hello 北京"
+	str3 := []rune(str2)
+	for i := 0; i < len(str3); i++ {
+		fmt.Printf("字符=%c \n", str3[i])
+	}
 }
