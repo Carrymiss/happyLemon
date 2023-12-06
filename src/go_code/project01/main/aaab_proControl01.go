@@ -3,7 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	test03()
+	// test03()
+	// 循环控制
+	test04()
 }
 func test03() {
 	// switch分支
@@ -19,5 +21,12 @@ func test03() {
 		fmt.Println("你输入的数字是3")
 	default:
 		fmt.Println("你输入的数字是其他数字")
+	}
+}
+func test04() {
+	// for循环
+	for i := 1; i <= 10; i++ {
+		// 在输出里面加上i，可以看到i的变化
+		fmt.Println("hello world", i)
 	}
 }
