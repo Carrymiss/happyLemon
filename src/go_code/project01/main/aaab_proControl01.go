@@ -4,8 +4,12 @@ import "fmt"
 
 func main() {
 	// test03()
+
 	// 循环控制
-	test04()
+	//test04()
+
+	// 字符串遍历
+	test05()
 }
 func test03() {
 	// switch分支
@@ -58,5 +62,14 @@ func test04() {
 }
 
 func test05() {
+	// for range循环
+	str := "hello world"
+	for index, val := range str {
+		fmt.Printf("index=%v val=%c \n", index, val)
+	}
 
+	// 如果只想获取到字符串的值，不想获取到下标，可以使用_来忽略
+	for _, val := range str {
+		fmt.Printf("val=%c \n", val)
+	}
 }
