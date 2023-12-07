@@ -102,8 +102,22 @@ func test06() {
 		for j := 0; j < 10; j++ {
 			if j > 2 {
 				break
+			} else {
+				fmt.Println("j=", j)
 			}
-			fmt.Println("j=", j)
+		}
+		fmt.Println("i=", i)
+	}
+
+	// break语句还可以跳出指定的循环
+label1:
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 10; j++ {
+			if j > 2 {
+				break label1
+			} else {
+				fmt.Println("j=", j)
+			}
 		}
 		fmt.Println("i=", i)
 	}
