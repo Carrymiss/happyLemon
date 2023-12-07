@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"happyLemon/src/go_code/project01/demo01"
+	demo "happyLemon/src/go_code/project01/demo01" // 给导入的包起别名
 )
 
 func main() {
@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("-------------分割线--------------")
 
 	// 包的使用
-	result = demo01.Test01(1.2, 2.3, '/')
+	result = demo.Test01(1.2, 2.3, '/')
 	fmt.Println("result=", result)
 }
 
