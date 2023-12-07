@@ -169,3 +169,22 @@ func test11() {
 		}
 	}
 }
+
+func test12() {
+	// 实现登录验证，有三次机会，如果用户名为张无忌，密码为888，提示登录成功，否则提示还有几次机会
+	var name string
+	var password string
+	var count int = 3
+	for i := 1; i <= count; i++ {
+		fmt.Println("请输入用户名")
+		_, _ = fmt.Scanln(&name) // _表示忽略接收的值
+		fmt.Println("请输入密码")
+		_, _ = fmt.Scanln(&password) // _表示忽略接收的值
+		if name == "张无忌" && password == "888" {
+			fmt.Println("登录成功")
+			break
+		} else {
+			fmt.Println("还有", count-i, "次机会")
+		}
+	}
+}
