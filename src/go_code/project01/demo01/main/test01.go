@@ -17,6 +17,7 @@ func main() {
 	test08()
 	test09()
 	test10()
+	test11()
 }
 
 func test01() {
@@ -153,6 +154,18 @@ func test10() {
 			break
 		} else {
 			fmt.Println("生成的数是", num)
+		}
+	}
+}
+
+func test11() {
+	// 100以内的数求和，求出当和第一次大于20的当前数
+	var sum int = 0
+	for i := 1; i <= 100; i++ {
+		sum += i
+		if sum > 20 {
+			fmt.Println("当前数是", i)
+			break
 		}
 	}
 }

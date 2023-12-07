@@ -95,6 +95,7 @@ func test05() {
 		fmt.Printf("index=%v val=%c \n", index, val)
 	}
 }
+
 func test06() {
 	// break语句
 	// break会根据就近原则，默认跳转出最近的循环
