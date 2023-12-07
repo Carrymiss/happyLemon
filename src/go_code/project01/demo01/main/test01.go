@@ -227,3 +227,25 @@ func test13() {
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 }
+
+func test14() {
+	// 从键盘读入个数不确定的整数，并判断读入的正数和负数的个数，输入为0时结束程序 用for break continue实现
+	var positiveCount int = 0
+	var negativeCount int = 0
+	for {
+		var num int
+		fmt.Println("请输入一个整数")
+		_, _ = fmt.Scanln(&num)
+		if num == 0 {
+			break
+		}
+		if num > 0 {
+			positiveCount++
+			continue
+		}
+		negativeCount++
+	}
+	fmt.Println("正数的个数是", positiveCount, "负数的个数是", negativeCount)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
