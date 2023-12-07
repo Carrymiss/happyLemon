@@ -19,6 +19,7 @@ func main() {
 	test10()
 	test11()
 	test12()
+	test13()
 }
 
 func test01() {
@@ -27,6 +28,8 @@ func test01() {
 	var week int = days / 7
 	var day int = days % 7
 	fmt.Println(week, "个星期零", day, "天")
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test02() {
@@ -34,7 +37,10 @@ func test02() {
 	var huashi float32 = 134.5
 	var sheshi float32 = 5.0 / 9 * (huashi - 100)
 	fmt.Printf("华氏温度 %v 对应的摄氏温度为 %v \n", huashi, sheshi)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
+
 func test03() {
 	// 有两个变量，a和b，要求将其进行交换，但是不允许使用中间变量，最终打印结果
 	var a int = 10
@@ -43,6 +49,8 @@ func test03() {
 	b = a - b
 	a = a - b
 	fmt.Println("a=", a, "b=", b)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test04() {
@@ -56,6 +64,8 @@ func test04() {
 		max = num2
 	}
 	fmt.Println("max=", max)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test05() {
@@ -69,6 +79,8 @@ func test05() {
 	} else {
 		fmt.Println("你的年龄小于18，快去学习")
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test06() {
@@ -90,6 +102,8 @@ func test06() {
 	default:
 		fmt.Println("评价输入有误")
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test07() {
@@ -115,6 +129,8 @@ func test07() {
 	default:
 		fmt.Println("输入有误")
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08() {
@@ -129,6 +145,8 @@ func test08() {
 		}
 		fmt.Println()
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test09() {
@@ -139,6 +157,8 @@ func test09() {
 		}
 		fmt.Println()
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test10() {
@@ -157,6 +177,8 @@ func test10() {
 			fmt.Println("生成的数是", num)
 		}
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test11() {
@@ -169,6 +191,8 @@ func test11() {
 			break
 		}
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test12() {
@@ -188,4 +212,18 @@ func test12() {
 			fmt.Println("还有", count-i, "次机会")
 		}
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test13() {
+	// 打印1-100之类的奇数 continue实现
+	for i := 1; i <= 100; i++ {
+		if i%2 == 0 {
+			continue
+		}
+		fmt.Println(i)
+	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
