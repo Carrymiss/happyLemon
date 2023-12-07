@@ -14,7 +14,10 @@ func main() {
 	//test05()
 
 	// break用法
-	test06()
+	//test06()
+
+	// continue用法
+	test07()
 }
 func test03() {
 	// switch分支
@@ -133,5 +136,16 @@ label1:
 			}
 		}
 		fmt.Println("i=", i)
+	}
+}
+
+func test07() {
+	// continue语句
+	// continue会根据就近原则，默认跳转出最近的循环
+	for j := 0; j < 10; j++ {
+		if j == 2 {
+			continue
+		}
+		fmt.Println("j=", j)
 	}
 }

@@ -18,6 +18,7 @@ func main() {
 	test09()
 	test10()
 	test11()
+	test12()
 }
 
 func test01() {
