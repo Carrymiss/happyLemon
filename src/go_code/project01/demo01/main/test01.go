@@ -20,6 +20,8 @@ func main() {
 	test11()
 	test12()
 	test13()
+	test14()
+	test15()
 }
 
 func test01() {
@@ -246,6 +248,31 @@ func test14() {
 		negativeCount++
 	}
 	fmt.Println("正数的个数是", positiveCount, "负数的个数是", negativeCount)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test15() {
+	// 某人有100000元，每经过一次路口，需要进行一次交费，规则如下：当现金>50000时，每次交费5% 当现金<=50000时，每次交费1000 当现金<=0时，结束交费
+	// 只使用if实现
+	var money float64 = 100000
+	var count int = 0
+	for {
+		if money > 50000 {
+			money *= 0.95
+			count++
+			continue
+		}
+		if money <= 50000 && money > 0 {
+			money -= 1000
+			count++
+			continue
+		}
+		if money <= 0 {
+			break
+		}
+	}
+	fmt.Println("一共经过了", count, "次路口")
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 }
