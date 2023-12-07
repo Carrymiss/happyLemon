@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	// test03()
@@ -9,7 +11,13 @@ func main() {
 	//test04()
 
 	// 字符串遍历
-	test05()
+	//test05()
+
+	// break用法
+	//test06()
+
+	// continue用法
+	test07()
 }
 func test03() {
 	// switch分支
@@ -88,5 +96,56 @@ func test05() {
 	// 使用for range遍历带有中文的字符串
 	for index, val := range str3 {
 		fmt.Printf("index=%v val=%c \n", index, val)
+	}
+}
+
+func test06() {
+	// break语句
+	// break会根据就近原则，默认跳转出最近的循环
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 10; j++ {
+			if j > 2 {
+				break
+			} else {
+				fmt.Println("j=", j)
+			}
+		}
+		fmt.Println("i=", i)
+	}
+	fmt.Println("-----------分割符---------------")
+	// break语句还可以跳出指定的循环
+label1:
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 10; j++ {
+			if j > 2 {
+				break label1
+			} else {
+				fmt.Println("j=", j)
+			}
+		}
+		fmt.Println("i=", i)
+	}
+	fmt.Println("-----------分割符---------------")
+	for i := 0; i < 10; i++ {
+	label2:
+		for j := 0; j < 10; j++ {
+			if j > 2 {
+				break label2
+			} else {
+				fmt.Println("j=", j)
+			}
+		}
+		fmt.Println("i=", i)
+	}
+}
+
+func test07() {
+	// continue语句
+	// continue会根据就近原则，默认跳转出最近的循环
+	for j := 0; j < 10; j++ {
+		if j == 2 {
+			continue
+		}
+		fmt.Println("j=", j)
 	}
 }

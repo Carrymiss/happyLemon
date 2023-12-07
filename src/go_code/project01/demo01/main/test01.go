@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
 	test01()
@@ -11,6 +15,13 @@ func main() {
 	test06()
 	test07()
 	test08()
+	test09()
+	test10()
+	test11()
+	test12()
+	test13()
+	test14()
+	test15()
 }
 
 func test01() {
@@ -19,6 +30,8 @@ func test01() {
 	var week int = days / 7
 	var day int = days % 7
 	fmt.Println(week, "个星期零", day, "天")
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test02() {
@@ -26,7 +39,10 @@ func test02() {
 	var huashi float32 = 134.5
 	var sheshi float32 = 5.0 / 9 * (huashi - 100)
 	fmt.Printf("华氏温度 %v 对应的摄氏温度为 %v \n", huashi, sheshi)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
+
 func test03() {
 	// 有两个变量，a和b，要求将其进行交换，但是不允许使用中间变量，最终打印结果
 	var a int = 10
@@ -35,6 +51,8 @@ func test03() {
 	b = a - b
 	a = a - b
 	fmt.Println("a=", a, "b=", b)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test04() {
@@ -48,6 +66,8 @@ func test04() {
 		max = num2
 	}
 	fmt.Println("max=", max)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test05() {
@@ -61,6 +81,8 @@ func test05() {
 	} else {
 		fmt.Println("你的年龄小于18，快去学习")
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test06() {
@@ -82,6 +104,8 @@ func test06() {
 	default:
 		fmt.Println("评价输入有误")
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test07() {
@@ -107,6 +131,8 @@ func test07() {
 	default:
 		fmt.Println("输入有误")
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08() {
@@ -121,4 +147,132 @@ func test08() {
 		}
 		fmt.Println()
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test09() {
+	// 九九乘法表
+	for i := 1; i <= 9; i++ {
+		for j := 1; j <= i; j++ {
+			fmt.Printf("%v * %v = %v \t", j, i, i*j)
+		}
+		fmt.Println()
+	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test10() {
+	// 随机生成1-100的数，直到生成99这个数，看看你一共用了几次
+	var count int = 0
+	for {
+		// 设置纳秒级种子
+		rand.Seed(time.Now().UnixNano())
+		count++
+		fmt.Println("用了", count, "次")
+		num := rand.Intn(100) + 1 // 生成0-99的随机数
+		if num == 99 {
+			fmt.Println("生成了99，退出")
+			break
+		} else {
+			fmt.Println("生成的数是", num)
+		}
+	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test11() {
+	// 100以内的数求和，求出当和第一次大于20的当前数
+	var sum int = 0
+	for i := 1; i <= 100; i++ {
+		sum += i
+		if sum > 20 {
+			fmt.Println("当前数是", i)
+			break
+		}
+	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test12() {
+	// 实现登录验证，有三次机会，如果用户名为张无忌，密码为888，提示登录成功，否则提示还有几次机会
+	var name string
+	var password string
+	var count int = 3
+	for i := 1; i <= count; i++ {
+		fmt.Println("请输入用户名")
+		_, _ = fmt.Scanln(&name) // _表示忽略接收的值
+		fmt.Println("请输入密码")
+		_, _ = fmt.Scanln(&password) // _表示忽略接收的值
+		if name == "张无忌" && password == "888" {
+			fmt.Println("登录成功")
+			break
+		} else {
+			fmt.Println("还有", count-i, "次机会")
+		}
+	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test13() {
+	// 打印1-100之类的奇数 continue实现
+	for i := 1; i <= 100; i++ {
+		if i%2 == 0 {
+			continue
+		}
+		fmt.Println(i)
+	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test14() {
+	// 从键盘读入个数不确定的整数，并判断读入的正数和负数的个数，输入为0时结束程序 用for break continue实现
+	var positiveCount int = 0
+	var negativeCount int = 0
+	for {
+		var num int
+		fmt.Println("请输入一个整数")
+		_, _ = fmt.Scanln(&num)
+		if num == 0 {
+			break
+		}
+		if num > 0 {
+			positiveCount++
+			continue
+		}
+		negativeCount++
+	}
+	fmt.Println("正数的个数是", positiveCount, "负数的个数是", negativeCount)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test15() {
+	// 某人有100000元，每经过一次路口，需要进行一次交费，规则如下：当现金>50000时，每次交费5% 当现金<=50000时，每次交费1000 当现金<=0时，结束交费
+	// 只使用if实现
+	var money float64 = 100000
+	var count int = 0
+	for {
+		if money > 50000 {
+			money *= 0.95
+			count++
+			continue
+		}
+		if money <= 50000 && money > 0 {
+			money -= 1000
+			count++
+			continue
+		}
+		if money <= 0 {
+			break
+		}
+	}
+	fmt.Println("一共经过了", count, "次路口")
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
