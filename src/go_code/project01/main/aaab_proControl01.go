@@ -108,13 +108,25 @@ func test06() {
 		}
 		fmt.Println("i=", i)
 	}
-
+	fmt.Println("-----------分割符---------------")
 	// break语句还可以跳出指定的循环
 label1:
 	for i := 0; i < 10; i++ {
 		for j := 0; j < 10; j++ {
 			if j > 2 {
 				break label1
+			} else {
+				fmt.Println("j=", j)
+			}
+		}
+		fmt.Println("i=", i)
+	}
+	fmt.Println("-----------分割符---------------")
+	for i := 0; i < 10; i++ {
+	label2:
+		for j := 0; j < 10; j++ {
+			if j > 2 {
+				break label2
 			} else {
 				fmt.Println("j=", j)
 			}
