@@ -4,14 +4,14 @@ import "fmt"
 
 func main() {
 	// 函数的使用
-	result1 := test08(1.2, 2.3, '+')
-	fmt.Println("result=", result1)
-	result2 := test08(1.2, 2.3, '-')
-	fmt.Println("result=", result2)
-	result3 := test08(1.2, 2.3, '*')
-	fmt.Println("result=", result3)
-	result4 := test08(1.2, 2.3, '/')
-	fmt.Println("result=", result4)
+	result := test08(1.2, 2.3, '+')
+	fmt.Println("result=", result)
+	result = test08(1.2, 2.3, '-')
+	fmt.Println("result=", result)
+	result = test08(1.2, 2.3, '*')
+	fmt.Println("result=", result)
+	result = test08(1.2, 2.3, '/')
+	fmt.Println("result=", result)
 
 }
 
