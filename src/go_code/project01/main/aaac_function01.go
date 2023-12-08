@@ -29,6 +29,9 @@ func main() {
 	fmt.Println("result=", result)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 递归调用
+	test10(4)
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -51,4 +54,12 @@ func test08(n1 float64, n2 float64, operator byte) float64 {
 func test09(n1 int) {
 	n1++
 	fmt.Println("test_n1=", n1)
+}
+
+func test10(n1 int) {
+	if n1 > 2 {
+		n1--
+		test10(n1)
+	}
+	fmt.Println("n1=", n1)
 }
