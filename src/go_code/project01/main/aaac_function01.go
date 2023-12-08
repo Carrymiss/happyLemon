@@ -7,6 +7,12 @@ import (
 
 func main() {
 	// 函数的使用
+	n1 := 10
+	test09(n1)
+	fmt.Println("main_n1=", n1)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
 	result := test08(1.2, 2.3, '+')
 	fmt.Println("result=", result)
 	result = test08(1.2, 2.3, '-')
@@ -21,6 +27,8 @@ func main() {
 	// 包的使用
 	result = demo.Test01(1.2, 2.3, '/')
 	fmt.Println("result=", result)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -38,4 +46,9 @@ func test08(n1 float64, n2 float64, operator byte) float64 {
 		fmt.Println("操作符号错误")
 	}
 	return res
+}
+
+func test09(n1 int) {
+	n1++
+	fmt.Println("test_n1=", n1)
 }
