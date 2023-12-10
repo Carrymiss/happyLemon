@@ -31,6 +31,11 @@ func main() {
 	fmt.Println("此时数列的值是：", j)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	i2 := test18(1)
+	fmt.Println("第一天的桃子数量是：", i2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test01() {
@@ -304,4 +309,19 @@ func test17(num int) int {
 	} else {
 		return 2*test17(num-1) + test17(num-2)
 	}
+}
+
+func test18(num int) int {
+	// 猴子吃桃子问题：猴子第一天摘下若干个桃子，当即吃了一半，还不瘾，又多吃了一个，第二天早上又将剩下的桃子吃掉一半，又多吃了一个，以后每天早上都吃了前一天剩下的一半多一个，到第10天早上想再吃时，见只剩下一个桃子了，求第一天共摘了多少
+	if num > 10 || num < 1 {
+		fmt.Println("输入有误")
+		return 0
+	}
+	if num == 10 {
+		fmt.Println("第10天有1个桃子")
+		return 1
+	} else {
+		return (test18(num+1) + 1) * 2
+	}
+
 }
