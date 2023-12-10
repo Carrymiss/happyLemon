@@ -5,6 +5,8 @@ import (
 	demo "happyLemon/src/go_code/project01/demo01" // 给导入的包起别名
 )
 
+type myFunType func(int, int) int // 给函数自定义类型
+
 func main() {
 	// 函数的使用
 	n1 := 10
@@ -54,6 +56,17 @@ func main() {
 	test13()
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 给函数自定义类型
+	res = test12(test11, 10, 20)
+	fmt.Println("res=", res)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 给函数自定义类型
+	test14(res)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -92,7 +105,7 @@ func test11(n1 int, n2 int) int {
 	return n1 + n2
 }
 
-func test12(funVar func(int, int) int, num1 int, num2 int) int {
+func test12(funVar myFunType, num1 int, num2 int) int {
 	// 函数可以作为形参
 	return funVar(num1, num2)
 }
@@ -105,4 +118,11 @@ func test13() {
 	num1 = 40
 	fmt.Println("num1=", num1)
 	fmt.Printf("num1的类型%T\n", num1)
+}
+
+func test14(res int) {
+	var funVar myFunType
+	funVar = test11
+	res = funVar(10, 20)
+	fmt.Println("res=", res)
 }
