@@ -42,6 +42,12 @@ func main() {
 	fmt.Println("res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 函数可以作为形参
+	res = test12(test11, 50, 60)
+	fmt.Println("res=", res)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -78,4 +84,9 @@ func test11(n1 int, n2 int) int {
 	// 函数也是一种数据类型
 	// 可以赋值给一个变量，则该变量就是一个函数类型的变量了，通过该变量可以对函数调用
 	return n1 + n2
+}
+
+func test12(funVar func(int, int) int, num1 int, num2 int) int {
+	// 函数可以作为形参
+	return funVar(num1, num2)
 }
