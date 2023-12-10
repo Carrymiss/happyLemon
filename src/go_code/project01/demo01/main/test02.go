@@ -20,6 +20,9 @@ func main() {
 
 	// 99乘法表
 	test26(9)
+
+	// 数组转置
+	test27()
 }
 
 func test21(suffix string) func(string) string {
@@ -108,6 +111,15 @@ func test27() {
 	// 给一个二位数组（3*3）转置
 	var arr [3][3]int = [3][3]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
 	var arr2 [3][3]int
+	// 打印原数组
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[i]); j++ {
+			fmt.Print(arr[i][j], "\t")
+		}
+		fmt.Println()
+	}
+	// 分割线
+	println("-------------分割线--------------")
 	for i := 0; i < len(arr); i++ {
 		for j := 0; j < len(arr[i]); j++ {
 			arr2[j][i] = arr[i][j]
