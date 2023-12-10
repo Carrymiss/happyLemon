@@ -71,12 +71,13 @@ func test24(num1 int) {
 
 func test25(num1 int) {
 	// 打印空心金字塔
+	// 最后一行隔一个打印一个*
 	for i := 1; i <= num1; i++ {
 		for j := 1; j <= num1-i; j++ {
 			fmt.Print(" ")
 		}
 		for k := 1; k <= 2*i-1; k++ {
-			if k == 1 || k == 2*i-1 || i == num1 {
+			if k == 1 || k == 2*i-1 || (i == num1 && k%3 == 1) {
 				fmt.Print("*")
 			} else {
 				fmt.Print(" ")
