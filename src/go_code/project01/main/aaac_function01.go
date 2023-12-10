@@ -67,6 +67,12 @@ func main() {
 	test14(res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 支持返回值命名
+	res1, res2 := test15(10, 20)
+	fmt.Println("res1=", res1, "res2=", res2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -125,4 +131,11 @@ func test14(res int) {
 	funVar = test11
 	res = funVar(10, 20)
 	fmt.Println("res=", res)
+}
+
+func test15(n1 int, n2 int) (sum int, sub int) {
+	// 支持返回值命名
+	sum = n1 + n2
+	sub = n1 - n2
+	return
 }
