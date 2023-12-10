@@ -7,21 +7,42 @@ import (
 )
 
 func main() {
-	test01()
-	test02()
-	test03()
-	test04()
-	test05()
-	test06()
-	test07()
-	test08()
-	test09()
-	test10()
-	test11()
-	test12()
-	test13()
-	test14()
-	test15()
+	//test01()
+	//test02()
+	//test03()
+	//test04()
+	//test05()
+	//test06()
+	//test07()
+	//test08()
+	//test09()
+	//test10()
+	//test11()
+	//test12()
+	//test13()
+	//test14()
+	//test15()
+	i := test16(10)
+	fmt.Println("此时斐波那契数列的值是：", i)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	j := test17(10)
+	fmt.Println("此时数列的值是：", j)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	i2 := test18(1)
+	fmt.Println("第一天的桃子数量是：", i2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	num := 20
+	fmt.Println("main_num=", num)
+	test19(&num)
+	fmt.Println("num=", num)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test01() {
@@ -275,4 +296,44 @@ func test15() {
 	fmt.Println("一共经过了", count, "次路口")
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+}
+
+func test16(num int) int {
+	// 使用递归求出斐波那契数列的第n个数	1 1 2 3 5 8 13 21 34 55
+	if num <= 1 {
+		return num
+	} else {
+		return test16(num-1) + test16(num-2)
+	}
+}
+
+func test17(num int) int {
+	// 有一个数列：f(0)=1,f(1)=4,f(n+2)=2*f(n+1)+f(n),其中n是大于0的整数，求f(10)的值
+	if num == 0 {
+		return 1
+	} else if num == 1 {
+		return 4
+	} else {
+		return 2*test17(num-1) + test17(num-2)
+	}
+}
+
+func test18(num int) int {
+	// 猴子吃桃子问题：猴子第一天摘下若干个桃子，当即吃了一半，还不瘾，又多吃了一个，第二天早上又将剩下的桃子吃掉一半，又多吃了一个，以后每天早上都吃了前一天剩下的一半多一个，到第10天早上想再吃时，见只剩下一个桃子了，求第一天共摘了多少
+	if num > 10 || num < 1 {
+		fmt.Println("输入有误")
+		return 0
+	}
+	if num == 10 {
+		fmt.Println("第10天有1个桃子")
+		return 1
+	} else {
+		return (test18(num+1) + 1) * 2
+	}
+
+}
+
+func test19(num *int) {
+	*num = *num + 10
+	fmt.Println("test19_num=", *num)
 }
