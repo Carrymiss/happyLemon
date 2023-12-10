@@ -2,6 +2,8 @@ package demo01
 
 import "fmt"
 
+var Age int
+var Name string
 var HeroName string = "超人"
 
 func Test01(n1 float64, n2 float64, operator byte) float64 {

@@ -43,6 +43,17 @@ func main() {
 	fmt.Println("num=", num)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 交换两个变量的值
+	n1 := 10
+	n2 := 20
+	fmt.Println("n1=", n1, "n2=", n2)
+	fmt.Printf("n1=%v,n2=%v \n", n1, n2)
+	fmt.Printf("n1的地址是%p n2的地址是%p \n", &n1, &n2)
+	test20(&n1, &n2)
+	fmt.Println("n1=", n1, "n2=", n2)
+	fmt.Printf("n1=%v,n2=%v \n", n1, n2)
+	fmt.Printf("n1的地址是%p n2的地址是%p \n", &n1, &n2)
 }
 
 func test01() {
@@ -336,4 +347,9 @@ func test18(num int) int {
 func test19(num *int) {
 	*num = *num + 10
 	fmt.Println("test19_num=", *num)
+}
+
+func test20(n1 *int, n2 *int) {
+	// 交换两个变量的值
+	*n1, *n2 = *n2, *n1
 }
