@@ -26,6 +26,7 @@ func main() {
 
 	// 闭包
 	test23()
+	test26()
 }
 
 // init函数
@@ -106,4 +107,22 @@ func test24() func(int) int {
 		num += x
 		return num
 	}
+}
+
+// 累加器
+func test25() func() {
+	var str = "hello"
+	return func() {
+		str += string(36)
+		fmt.Println("str=", str)
+	}
+}
+
+func test26() {
+	// 闭包
+	f := test25()
+	f()
+	f()
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
