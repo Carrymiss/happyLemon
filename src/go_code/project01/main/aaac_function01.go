@@ -79,6 +79,20 @@ func main() {
 	fmt.Println("res1=", res1)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 支持可变参数
+	// 支持0-多个参数
+	// 语法：func test16(args ...int) {} args是一个slice切片，可以通过args[index]来访问各个值
+	test16(1, 2, 3, 4, 5)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 支持1-多个参数
+	// 语法：func test17(num1 int, args ...int) {} args是一个slice切片，可以通过args[index]来访问各个值
+	sum := test17(1, 2, 3, 4, 5)
+	fmt.Println("i=", sum)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -144,4 +158,23 @@ func test15(n1 int, n2 int) (sum int, sub int) {
 	sum = n1 + n2
 	sub = n1 - n2
 	return
+}
+
+func test16(args ...int) {
+	// 支持可变参数
+	// 支持0-多个参数
+	// 语法：func test16(args ...int) {} args是一个slice切片，可以通过args[index]来访问各个值
+	fmt.Println("args的值=", args)
+	fmt.Printf("args的类型是：%T\n", args)
+}
+
+func test17(n1 int, args ...int) int {
+	// 支持可变参数
+	// 支持1-多个参数
+	// 语法：func test17(num1 int, args ...int) {} args是一个slice切片，可以通过args[index]来访问各个值
+	sum := n1
+	for i := 0; i < len(args); i++ {
+		sum += args[i]
+	}
+	return sum
 }
