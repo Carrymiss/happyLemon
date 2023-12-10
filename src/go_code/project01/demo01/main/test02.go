@@ -17,6 +17,9 @@ func main() {
 
 	// 打印空心金字塔
 	test25(10)
+
+	// 99乘法表
+	test26(9)
 }
 
 func test21(suffix string) func(string) string {
@@ -82,6 +85,38 @@ func test25(num1 int) {
 			} else {
 				fmt.Print(" ")
 			}
+		}
+		fmt.Println()
+	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test26(num int) {
+	// 99乘法表
+	for i := 1; i <= num; i++ {
+		for j := 1; j <= i; j++ {
+			fmt.Printf("%v * %v = %v \t", j, i, i*j)
+		}
+		fmt.Println()
+	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test27() {
+	// 给一个二位数组（3*3）转置
+	var arr [3][3]int = [3][3]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	var arr2 [3][3]int
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[i]); j++ {
+			arr2[j][i] = arr[i][j]
+		}
+	}
+	// 打印转置后的数组
+	for i := 0; i < len(arr2); i++ {
+		for j := 0; j < len(arr2[i]); j++ {
+			fmt.Print(arr2[i][j], "\t")
 		}
 		fmt.Println()
 	}
