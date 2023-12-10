@@ -7,21 +7,30 @@ import (
 )
 
 func main() {
-	test01()
-	test02()
-	test03()
-	test04()
-	test05()
-	test06()
-	test07()
-	test08()
-	test09()
-	test10()
-	test11()
-	test12()
-	test13()
-	test14()
-	test15()
+	//test01()
+	//test02()
+	//test03()
+	//test04()
+	//test05()
+	//test06()
+	//test07()
+	//test08()
+	//test09()
+	//test10()
+	//test11()
+	//test12()
+	//test13()
+	//test14()
+	//test15()
+	i := test16(10)
+	fmt.Println("此时斐波那契数列的值是：", i)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	j := test17(10)
+	fmt.Println("此时数列的值是：", j)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test01() {
@@ -275,4 +284,24 @@ func test15() {
 	fmt.Println("一共经过了", count, "次路口")
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+}
+
+func test16(num int) int {
+	// 使用递归求出斐波那契数列的第n个数	1 1 2 3 5 8 13 21 34 55
+	if num <= 1 {
+		return num
+	} else {
+		return test16(num-1) + test16(num-2)
+	}
+}
+
+func test17(num int) int {
+	// 有一个数列：f(0)=1,f(1)=4,f(n+2)=2*f(n+1)+f(n),其中n是大于0的整数，求f(10)的值
+	if num == 0 {
+		return 1
+	} else if num == 1 {
+		return 4
+	} else {
+		return 2*test17(num-1) + test17(num-2)
+	}
 }
