@@ -11,6 +11,12 @@ func main() {
 
 	// 打印金字塔
 	test23(10)
+
+	// 打印倒金字塔
+	test24(10)
+
+	// 打印空心金字塔
+	test25(10)
 }
 
 func test21(suffix string) func(string) string {
@@ -44,4 +50,40 @@ func test23(num1 int) {
 		}
 		fmt.Println()
 	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test24(num1 int) {
+	// 打印倒金字塔
+	for i := 1; i <= num1; i++ {
+		for j := 1; j <= i; j++ {
+			fmt.Print(" ")
+		}
+		for k := 1; k <= 2*(num1-i)-1; k++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test25(num1 int) {
+	// 打印空心金字塔
+	for i := 1; i <= num1; i++ {
+		for j := 1; j <= num1-i; j++ {
+			fmt.Print(" ")
+		}
+		for k := 1; k <= 2*i-1; k++ {
+			if k == 1 || k == 2*i-1 || i == num1 {
+				fmt.Print("*")
+			} else {
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+	// 分割线
+	println("-------------分割线--------------")
 }
