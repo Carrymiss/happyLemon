@@ -36,6 +36,13 @@ func main() {
 	fmt.Println("第一天的桃子数量是：", i2)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	num := 20
+	fmt.Println("main_num=", num)
+	test19(&num)
+	fmt.Println("num=", num)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test01() {
@@ -324,4 +331,9 @@ func test18(num int) int {
 		return (test18(num+1) + 1) * 2
 	}
 
+}
+
+func test19(num *int) {
+	*num = *num + 10
+	fmt.Println("test19_num=", *num)
 }
