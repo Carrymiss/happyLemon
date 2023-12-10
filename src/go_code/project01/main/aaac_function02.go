@@ -23,6 +23,9 @@ func main() {
 	test20()
 	test21()
 	test22()
+
+	// 闭包
+	test23()
 }
 
 // init函数
@@ -67,7 +70,7 @@ func test21() {
 	res := a(10, 20)
 	fmt.Println("res=", res)
 	// 分割线
-	fmt.Println("-------------分割线--------------")
+	fmt.Println("--------------分割线--------------")
 }
 
 func test22() {
@@ -75,4 +78,32 @@ func test22() {
 	fmt.Println("res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+}
+
+func test23() {
+	// 闭包
+	// 闭包是一个函数，这个函数包含了他外部作用域的一个变量
+	// 底层原理：函数和他外部变量的引用（环境）
+	// 闭包的说明：
+	// 1.返回的是一个函数，但是这个函数引用到函数外的变量
+	// 2.这个返回的函数在他被调用时，仍然可以找到他引用的外部变量
+	// 3.闭包函数常见的错误用法：返回一个局部变量的地址
+	// 4.闭包函数的价值：可以保存一个状态，可以反复使用这个状态（闭包函数是一个引用类型）
+	f := test24()
+	fmt.Println(f(1))
+	fmt.Println(f(2))
+	fmt.Println(f(3))
+	fmt.Println(f(4))
+	fmt.Println(f(5))
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+// 累加器
+func test24() func(int) int {
+	var num int
+	return func(x int) int {
+		num += x
+		return num
+	}
 }
