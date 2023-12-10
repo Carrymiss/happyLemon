@@ -32,6 +32,16 @@ func main() {
 
 	// 递归调用
 	test10(4)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 函数也是一种数据类型
+	a := test11
+	fmt.Printf("a的类型%T test11的类型%T\n", a, test11)
+	res := a(10, 20)
+	fmt.Println("res=", res)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -62,4 +72,10 @@ func test10(n1 int) {
 		test10(n1)
 	}
 	fmt.Println("n1=", n1)
+}
+
+func test11(n1 int, n2 int) int {
+	// 函数也是一种数据类型
+	// 可以赋值给一个变量，则该变量就是一个函数类型的变量了，通过该变量可以对函数调用
+	return n1 + n2
 }
