@@ -133,10 +133,11 @@ func test26() {
 func test27(num1 int, num2 int) int {
 	// defer(延时机制) 关键字 用于函数结束之前释放资源 一般用于关闭文件或者数据库连接
 	// defer的执行顺序是先进后出 defer的参数会在声明时就确定
-	defer fmt.Println("num1=", num1)
-	defer fmt.Println("num2=", num2)
+	// defer将语句放入到栈时，也会将相关的值拷贝同时入栈
+	defer fmt.Println("num1=", num1) // 最后执行
+	defer fmt.Println("num2=", num2) // 然后执行
 	res := num1 + num2
-	fmt.Println("res=", res)
+	fmt.Println("res=", res) // 先执行
 	return res
 }
 
