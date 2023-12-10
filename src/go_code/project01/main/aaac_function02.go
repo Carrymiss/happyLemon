@@ -8,6 +8,13 @@ import (
 // 定义全局变量
 var age = test19()
 
+// 全局匿名函数
+var (
+	fun1 = func(n1 int, n2 int) int {
+		return n1 * n2
+	}
+)
+
 func main() {
 	// init函数
 	test18()
@@ -15,6 +22,7 @@ func main() {
 	// 匿名函数
 	test20()
 	test21()
+	test22()
 }
 
 // init函数
@@ -57,6 +65,13 @@ func test21() {
 		return n1 + n2
 	}
 	res := a(10, 20)
+	fmt.Println("res=", res)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test22() {
+	res := fun1(10, 20)
 	fmt.Println("res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
