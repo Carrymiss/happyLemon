@@ -23,6 +23,7 @@ func test19() int {
 
 func test18() {
 	fmt.Println("main函数执行了")
+	fmt.Println("age=", age)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 }
