@@ -14,6 +14,7 @@ func main() {
 
 	// 匿名函数
 	test20()
+	test21()
 }
 
 // init函数
@@ -44,6 +45,18 @@ func test20() {
 	res := func(n1 int, n2 int) int {
 		return n1 + n2
 	}(10, 20)
+	fmt.Println("res=", res)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test21() {
+	// 匿名函数
+	// 将匿名函数赋值给一个变量（函数变量），则可以通过该变量来调用该匿名函数
+	a := func(n1 int, n2 int) int { // 将匿名函数赋值给变量a 类型是myFunType 自定义类型 func(int, int) int
+		return n1 + n2
+	}
+	res := a(10, 20)
 	fmt.Println("res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
