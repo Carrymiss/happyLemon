@@ -48,6 +48,12 @@ func main() {
 	fmt.Println("res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 为了简化数据类型定义，Go支持自定义数据类型
+	// 使用type关键字来定义一个自定义数据类型
+	test13()
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
@@ -89,4 +95,14 @@ func test11(n1 int, n2 int) int {
 func test12(funVar func(int, int) int, num1 int, num2 int) int {
 	// 函数可以作为形参
 	return funVar(num1, num2)
+}
+
+func test13() {
+	// 为了简化数据类型定义，Go支持自定义数据类型
+	// 使用type关键字来定义一个自定义数据类型
+	type myInt int
+	var num1 myInt
+	num1 = 40
+	fmt.Println("num1=", num1)
+	fmt.Printf("num1的类型%T\n", num1)
 }
