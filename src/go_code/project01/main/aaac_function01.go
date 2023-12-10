@@ -73,6 +73,12 @@ func main() {
 	fmt.Println("res1=", res1, "res2=", res2)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 使用_忽略返回值
+	res1, _ = test15(10, 20)
+	fmt.Println("res1=", res1)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test08(n1 float64, n2 float64, operator byte) float64 {
