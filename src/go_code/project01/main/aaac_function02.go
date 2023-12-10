@@ -11,6 +11,9 @@ var age = test19()
 func main() {
 	// init函数
 	test18()
+
+	// 匿名函数
+	test20()
 }
 
 // init函数
@@ -31,6 +34,17 @@ func test18() {
 	fmt.Println("age=", age)
 	fmt.Println("demo01.Age=", demo01.Age)
 	fmt.Println("demo01.Name=", demo01.Name)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test20() {
+	// 匿名函数
+	// 在定义匿名函数时就直接调用，这种方式匿名函数只能调用一次
+	res := func(n1 int, n2 int) int {
+		return n1 + n2
+	}(10, 20)
+	fmt.Println("res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 }
