@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-
+	// 如果name没有后缀，就加上后缀，否则就返回原来的名字
+	test22()
 }
 
 func test21(suffix string) func(string) string {
