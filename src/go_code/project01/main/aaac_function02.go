@@ -155,7 +155,9 @@ func test28() {
 func test29() {
 	// len函数 用于求长度，比如string、array、slice、map、channel
 	str := "hello北"
-	fmt.Println("str_len=", len(str))
+	fmt.Println("str_len1=", len(str))
+	str = "hello"
+	fmt.Println("str_len2=", len(str))
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
