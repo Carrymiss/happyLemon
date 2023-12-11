@@ -27,6 +27,9 @@ func main() {
 	// 闭包
 	test23()
 	test26()
+
+	// defer(延时机制) 关键字
+	test28()
 }
 
 // init函数
@@ -123,6 +126,25 @@ func test26() {
 	f := test25()
 	f()
 	f()
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test27(num1 int, num2 int) int {
+	// defer(延时机制) 关键字 用于函数结束之前释放资源 一般用于关闭文件或者数据库连接
+	// defer的执行顺序是先进后出 defer的参数会在声明时就确定
+	// defer将语句放入到栈时，也会将相关的值拷贝同时入栈
+	defer fmt.Println("num1=", num1) // 最后执行
+	defer fmt.Println("num2=", num2) // 然后执行
+	res := num1 + num2
+	fmt.Println("res=", res) // 先执行
+	return res
+}
+
+func test28() {
+	// defer(延时机制) 关键字 用于函数结束之前释放资源 一般用于关闭文件或者数据库连接
+	res := test27(10, 20)
+	fmt.Println("main_res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 }
