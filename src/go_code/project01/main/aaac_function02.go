@@ -167,4 +167,6 @@ func test29() {
 	for i := 0; i < len(str1); i++ {
 		fmt.Printf("%c \n", str1[i])
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
