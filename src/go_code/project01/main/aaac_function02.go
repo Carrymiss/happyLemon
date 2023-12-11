@@ -326,6 +326,8 @@ func test30() {
 	// 格式化日期时间
 	fmt.Printf("当前年月日 %d-%d-%d %d:%d:%d \n", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second())
 	fmt.Printf("当前年月日 %d-%d-%d %d:%d:%d \n", now.Year(), int(now.Month()), now.Day(), now.Hour(), now.Minute(), now.Second())
+	dataStr := fmt.Sprintf("当前年月日 %d-%d-%d %d:%d:%d \n", now.Year(), int(now.Month()), now.Day(), now.Hour(), now.Minute(), now.Second())
+	fmt.Println("dataStr :", dataStr)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
