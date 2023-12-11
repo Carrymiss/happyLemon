@@ -301,7 +301,7 @@ func test34() {
 	fmt.Println(test35('a', 'z'))
 	fmt.Println("\n大写的 Z-A:")
 	lowerCase := test35('a', 'z')
-	fmt.Println(strings.ToUpper(lowerCase))
+	upperCase := strings.ToUpper(lowerCase)
 	reversedUpperCase := test36(upperCase)
 	fmt.Println(reversedUpperCase)
 }
@@ -315,5 +315,10 @@ func test35(start, end byte) string {
 }
 
 func test36(s string) string {
-
+	// 字符串反转
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
 }
