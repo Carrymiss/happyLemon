@@ -190,25 +190,22 @@ func test30() {
 	target := rand.Intn(100) + 1 // 生成1-100的随机数
 	fmt.Println("作弊程序来了，数字是：", target)
 	for i := 1; i <= 10; i++ {
-		fmt.Print("Enter your guess: ")
+		fmt.Print("输入一个猜的数字: ")
 		var guess int
-		_, _ = fmt.Scan(&guess)
-
+		fmt.Scan(&guess)
 		if guess == target {
-			switch {
-			case i == 1:
+			switch i {
+			case 1:
 				fmt.Println("你真是个天才")
-			case i <= 3:
+			case 2, 3:
 				fmt.Println("你很聪明")
-			case i <= 9:
+			case 4, 5, 6, 7, 8, 9:
 				fmt.Println("你猜对了")
-			case i == 10:
+			case 10:
 				fmt.Println("可算猜对了")
 			}
 			return
 		}
 	}
-
 	fmt.Println("你太笨了")
-
 }
