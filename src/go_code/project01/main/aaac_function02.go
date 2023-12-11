@@ -226,5 +226,17 @@ func test29() {
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
-	//
+	// 返回子串在字符串第一次出现的index值，如果没有返回-1
+	num = strings.Index("NLT_abc", "abc")
+	fmt.Printf("子串在字符串第一次出现的index值是：%v \n", num)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 返回子串在字符串最后一次出现的index值，如果没有返回-1
+	num = strings.LastIndex("go golang", "go")
+	fmt.Printf("子串在字符串最后一次出现的index值是：%v \n", num)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 将指定的子串替换成另外一个子串，n表示替换几个，如果n=-1表示全部替换
 }
