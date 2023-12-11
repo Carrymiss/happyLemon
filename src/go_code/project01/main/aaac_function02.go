@@ -154,7 +154,7 @@ func test28() {
 
 func test29() {
 	// len函数 用于求长度，比如string、array、slice、map、channel
-	str := "hello北"
+	str := "hello北" // golang的编码统一为utf-8，一个汉字占3个字节
 	fmt.Println("str_len1=", len(str))
 	str = "hello"
 	fmt.Println("str_len2=", len(str))
