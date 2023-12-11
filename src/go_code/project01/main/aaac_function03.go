@@ -43,8 +43,6 @@ func test32() {
 	num2 := 0
 	res := num1 / num2
 	fmt.Println("res=", res)
-	// 分割线
-	fmt.Println("-------------分割线--------------")
 }
 
 func test33() {
@@ -52,6 +50,8 @@ func test33() {
 	test32()
 	test34()
 	fmt.Println("异常之后执行命令")
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
 
 func test34() {
@@ -68,8 +68,6 @@ func test34() {
 	num2 := 0
 	res := num1 / num2
 	fmt.Println("res=", res)
-	// 分割线
-	fmt.Println("-------------分割线--------------")
 }
 
 func test35() {
