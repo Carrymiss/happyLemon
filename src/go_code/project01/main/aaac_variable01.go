@@ -41,6 +41,17 @@ func test38() {
 }
 
 func test39() {
-	// 四种初始化数组的方式
+	// 几种初始化数组的方式
+	var arr1 [5]int
+	var arr2 = [3]int{1, 2, 3}
+	var arr3 = [...]int{1, 2, 3}
+	// 可以指定元素对应的下标
+	var arr4 = [4]string{1: "tom", 2: "jack", 3: "marry"}
 
+	fmt.Println("arr1=", arr1)
+	fmt.Println("arr2=", arr2)
+	fmt.Println("arr3=", arr3)
+	fmt.Println("arr4=", arr4)
+	// 分割线
+	println("-------------分割线--------------")
 }
