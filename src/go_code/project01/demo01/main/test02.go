@@ -258,3 +258,33 @@ func test32(year int, month int, day int) {
 	// 分割线
 	println("-------------分割线--------------")
 }
+
+func test33(num1 float64, num2 float32, operator int) {
+	// 计算器
+	var result float64
+	var operation string
+	switch operator {
+	case 1:
+		result = num1 + num2
+		operation = "加法"
+	case 2:
+		result = num1 - num2
+		operation = "减法"
+	case 3:
+		result = num1 * num2
+		operation = "乘法"
+	case 4:
+		if num2 == 0 {
+			fmt.Println("除数不能为0！")
+			return
+		}
+		result = num1 / num2
+		operation = "除法"
+	default:
+		fmt.Println("无效的操作符！")
+		return
+	}
+	fmt.Printf("计算结果: %.2f %s %.2f = %.2f\n", num1, operation, num2, result)
+	// 分割线
+	println("-------------分割线--------------")
+}
