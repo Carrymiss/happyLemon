@@ -43,6 +43,9 @@ func main() {
 
 	// 三天打鱼两天晒网
 	test32(2023, 12, 12)
+
+	// 计算器
+	test33(10, 20, 1)
 }
 
 func test21(suffix string) func(string) string {
@@ -259,7 +262,7 @@ func test32(year int, month int, day int) {
 	println("-------------分割线--------------")
 }
 
-func test33(num1 float64, num2 float32, operator int) {
+func test33(num1 float64, num2 float64, operator int) {
 	// 计算器
 	var result float64
 	var operation string
