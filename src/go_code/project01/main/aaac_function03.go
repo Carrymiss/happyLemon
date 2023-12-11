@@ -54,6 +54,8 @@ func test34() {
 		// recover()内置函数，可以捕获到异常
 		if err := recover(); err != nil {
 			fmt.Println("err=", err) // 打印异常
+			// 将错误发送邮件给管理员
+			fmt.Println("发送邮件给管理员")
 		}
 	}()
 	num1 := 10
