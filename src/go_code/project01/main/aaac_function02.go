@@ -5,6 +5,7 @@ import (
 	"happyLemon/src/go_code/project01/demo01"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // 定义全局变量
@@ -35,6 +36,9 @@ func main() {
 
 	// 字符串函数
 	test29()
+
+	// 时间日期常用函数
+	test30()
 }
 
 // init函数
@@ -294,6 +298,61 @@ func test29() {
 	// 判断字符串是否以指定的字符串结尾
 	str2 = strings.HasSuffix("ftp://192.168.75.1", "75.1")
 	fmt.Printf("str2=%v \n", str2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+type Duration int64
+
+func test30() {
+	// 时间日期常用函数
+	// 获取当前时间
+	now := time.Now()
+	fmt.Printf("now=%v now的类型是：%T \n", now, now)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 获取年月日时分秒
+	fmt.Printf("年=%v \n", now.Year())
+	fmt.Printf("月=%v \n", now.Month())
+	fmt.Printf("日=%v \n", now.Day())
+	fmt.Printf("时=%v \n", now.Hour())
+	fmt.Printf("分=%v \n", now.Minute())
+	fmt.Printf("秒=%v \n", now.Second())
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 格式化日期时间
+	fmt.Printf("当前年月日 %d-%d-%d %d:%d:%d \n", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second())
+	fmt.Printf("当前年月日 %d-%d-%d %d:%d:%d \n", now.Year(), int(now.Month()), now.Day(), now.Hour(), now.Minute(), now.Second())
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 格式化日期时间的第二种方式
+	fmt.Printf(now.Format("2006-01-02 15:04:05"))
+	fmt.Println()
+	fmt.Printf(now.Format("2006-01-02"))
+	fmt.Println()
+	fmt.Printf(now.Format("15:04:05"))
+	fmt.Println()
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 时间常量
+	const (
+		Nanosecond  Duration = 1
+		Microsecond          = 1000 * Nanosecond
+		Millisecond          = 1000 * Microsecond
+		Second               = 1000 * Millisecond
+		Minute               = 60 * Second
+		Hour                 = 60 * Minute
+	)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 时间戳
+	fmt.Printf("unix时间戳=%v unix时间戳的类型是：%T \n", now.Unix(), now.Unix())
+	fmt.Printf("unixnano时间戳=%v unixnano时间戳的类型是：%T \n", now.UnixNano(), now.UnixNano())
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 }
