@@ -40,6 +40,9 @@ func main() {
 
 	// 输出100以内的所有素数，每行显示5个，并求和
 	test31()
+
+	// 三天打鱼两天晒网
+	test32(2023, 12, 12)
 }
 
 func test21(suffix string) func(string) string {
@@ -232,5 +235,22 @@ func test31() {
 				fmt.Println()
 			}
 		}
+	}
+}
+
+func test32(year int, month int, day int) {
+	// 从1990年1月1日开始执行三天打鱼两天晒网，问在以后的某一天中，是打鱼还是晒网
+	// 1.计算从1990年1月1日到现在的总天数
+	// 2.计算从1990年1月1日到现在的总天数对5取余数
+	// 3.如果余数为1、2、3则为打鱼，如果余数为4、0则为晒网
+	targetDate := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.Local)
+	startDate := time.Date(1990, time.January, 1, 0, 0, 0, 0, time.Local)
+	days := int(targetDate.Sub(startDate).Hours() / 24)
+	// 计算相差天数对5取余
+	mod := days % 5
+	if mod < 3 {
+		fmt.Println("在", targetDate.Format("2006年1月2日"), "是打鱼的日子")
+	} else {
+		fmt.Println("在", targetDate.Format("2006年1月2日"), "是晒网的日子")
 	}
 }
