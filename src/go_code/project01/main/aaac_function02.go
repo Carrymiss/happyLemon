@@ -253,4 +253,11 @@ func test29() {
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
+	// 将字符串的字母进行大小写的转换
+	str = "goLang Hello"
+	str4 := strings.ToLower(str)
+	str3 := strings.ToUpper(str)
+	fmt.Printf("str4=%v str3=%v \n", str4, str3)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
