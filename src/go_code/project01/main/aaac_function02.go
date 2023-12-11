@@ -219,4 +219,12 @@ func test29() {
 	fmt.Printf("字符串中有%v个e \n", num)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 不区分大小写的字符串比较（==是区分字母大小写的）
+	str2 = strings.EqualFold("abc", "Abc")
+	fmt.Printf("不区分大小写的字符串比较结果是：%v \n", str2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	//
 }
