@@ -5,6 +5,9 @@ import "fmt"
 func main() {
 	// new函数
 	test31()
+
+	// 异常处理
+	test33()
 }
 
 func test31() {
@@ -20,4 +23,26 @@ func test31() {
 	fmt.Printf("num1的类型 %T num1的值 %v num1的地址 %v num1指向的值 %v \n", num1, num1, &num1, *num1)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+}
+
+func test32() {
+	// 异常处理
+	defer func() {
+		err := recover() // recover()内置函数，可以捕获到异常
+		if err != nil {
+			fmt.Println("err=", err) // 打印异常
+		}
+	}()
+	num1 := 10
+	num2 := 0
+	res := num1 / num2
+	fmt.Println("res=", res)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test33() {
+	fmt.Println("执行命令")
+	test32()
+	fmt.Println("异常之后执行命令")
 }
