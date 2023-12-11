@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"happyLemon/src/go_code/project01/demo01"
+	"strconv"
 )
 
 // 定义全局变量
@@ -167,6 +168,22 @@ func test29() {
 	for i := 0; i < len(str1); i++ {
 		fmt.Printf("%c \n", str1[i])
 	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 字符串转成整数
+	num, err := strconv.Atoi("121345")
+	if err != nil {
+		fmt.Println("转换错误", err)
+	} else {
+		fmt.Println("转换的结果num=", num)
+	}
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 整数转字符串
+	str = strconv.Itoa(12345)
+	fmt.Printf("str=%v str的类型是：%T \n", str, str)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 }
