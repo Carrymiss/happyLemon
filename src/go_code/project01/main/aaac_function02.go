@@ -186,4 +186,16 @@ func test29() {
 	fmt.Printf("str=%v str的类型是：%T \n", str, str)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 字符串转byte切片
+	var bytes = []byte("hello go")
+	fmt.Printf("bytes=%c \n", bytes)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// byte切片转字符串
+	str = string([]byte{97, 98, 99})
+	fmt.Printf("str=%v \n", str)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
