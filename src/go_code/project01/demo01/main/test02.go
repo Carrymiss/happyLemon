@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -23,6 +26,15 @@ func main() {
 
 	// 数组转置
 	test27()
+
+	// 统计执行时间
+	test28()
+
+	// 输出当前月份的天数
+	test29(2002, 6)
+
+	// 猜数字
+	test30()
 }
 
 func test21(suffix string) func(string) string {
@@ -134,4 +146,66 @@ func test27() {
 	}
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test28() {
+	// 统计执行时间
+	start := time.Now().Unix()
+	var str string = ""
+	for i := 0; i < 100000; i++ {
+		str += "hello" + strconv.Itoa(i)
+	}
+	end := time.Now().Unix()
+	fmt.Println("执行时间为：", end-start, "秒")
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test29(year int, month int) {
+	// 根据年份和月份，打印当月的天数
+	var num int = 0
+	switch month {
+	case 1, 3, 5, 7, 8, 10, 12:
+		num = 31
+	case 2:
+		if year%4 == 0 && year%100 != 0 || year%400 == 0 {
+			num = 29
+		} else {
+			num = 28
+		}
+	case 4, 6, 9, 11:
+		num = 30
+	default:
+		fmt.Println("输入有误")
+	}
+	fmt.Printf("%v年%v月有%v天\n", year, month, num)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test30() {
+	// 随机猜数字 随机生成一个1-100的数，让用户猜，有10次机会 如果第一次就猜对了，就提示"你真是个天才" 如果第2-3次猜对了，就提示"你很聪明" 如果第4-9次猜对了，就提示"你猜对了" 如果第10次猜对了，就提示"可算猜对了" 如果10次都没猜对，就提示"你太笨了"
+	// 设置纳秒级种子
+	rand.Seed(time.Now().UnixNano())
+	target := rand.Intn(100) + 1 // 生成1-100的随机数
+	fmt.Println("作弊程序来了，数字是：", target)
+	for i := 1; i <= 10; i++ {
+		fmt.Print("输入一个猜的数字: ")
+		var guess int
+		fmt.Scan(&guess)
+		if guess == target {
+			switch i {
+			case 1:
+				fmt.Println("你真是个天才")
+			case 2, 3:
+				fmt.Println("你很聪明")
+			case 4, 5, 6, 7, 8, 9:
+				fmt.Println("你猜对了")
+			case 10:
+				fmt.Println("可算猜对了")
+			}
+			return
+		}
+	}
+	fmt.Println("你太笨了")
 }
