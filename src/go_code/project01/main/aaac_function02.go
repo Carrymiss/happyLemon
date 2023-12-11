@@ -239,4 +239,18 @@ func test29() {
 	fmt.Println("-------------分割线--------------")
 
 	// 将指定的子串替换成另外一个子串，n表示替换几个，如果n=-1表示全部替换
+	str = strings.Replace("go go hello", "go", "go语言", -1)
+	fmt.Printf("替换后的字符串是：%v \n", str)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 按照指定的某个字符，为分割标识，将一个字符串拆分成字符串数组
+	strArr := strings.Split("hello,world,ok", ",")
+	for i := 0; i < len(strArr); i++ {
+		fmt.Printf("strArr[%v]=%v \n", i, strArr[i])
+	}
+	fmt.Printf("strArr=%v \n", strArr)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
 }
