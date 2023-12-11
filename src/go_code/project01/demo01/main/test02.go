@@ -28,6 +28,8 @@ func main() {
 
 	// 统计执行时间
 	test28()
+
+	test29(22)
 }
 
 func test21(suffix string) func(string) string {
@@ -152,4 +154,22 @@ func test28() {
 	fmt.Println("执行时间为：", end-start, "秒")
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test29(num int) {
+	// 循环打印输入月份的天数，使用continue实现，判断输入的月份是否有误
+	switch num {
+	case 1, 3, 5, 7, 8, 10, 12:
+		fmt.Println("31天")
+	case 2:
+		fmt.Println("28天")
+	case 4, 6, 9, 11:
+		fmt.Println("30天")
+	default:
+		fmt.Println("输入有误")
+	}
+}
+
+func test30() {
+
 }
