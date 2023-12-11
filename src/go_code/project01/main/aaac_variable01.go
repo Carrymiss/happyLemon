@@ -63,6 +63,10 @@ func test40() {
 	for index, value := range arr2 {
 		fmt.Printf("数组的下标是 %v,该下标的值是 %v \n", index, value)
 	}
+	var arr4 = [4]string{1: "tom", 2: "jack", 3: "marry"}
+	for _, value := range arr4 {
+		fmt.Printf("数组的值是 %v\n", value)
+	}
 	// 分割线
 	println("-------------分割线--------------")
 }
