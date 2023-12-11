@@ -339,14 +339,25 @@ func test30() {
 	fmt.Println("-------------分割线--------------")
 
 	// 时间常量
-	const (
-		Nanosecond  Duration = 1
-		Microsecond          = 1000 * Nanosecond
-		Millisecond          = 1000 * Microsecond
-		Second               = 1000 * Millisecond
-		Minute               = 60 * Second
-		Hour                 = 60 * Minute
-	)
+	//const (
+	//	Nanosecond  Duration = 1
+	//	Microsecond          = 1000 * Nanosecond
+	//	Millisecond          = 1000 * Microsecond
+	//	Second               = 1000 * Millisecond
+	//	Minute               = 60 * Second
+	//	Hour                 = 60 * Minute
+	//)
+
+	// 时间间隔
+	i := 0
+	for {
+		i++
+		fmt.Println(i)
+		time.Sleep(time.Millisecond * 100) // 为了time.Sleep(time.Second * 0.1)不报错
+		if i == 100 {
+			break
+		}
+	}
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
