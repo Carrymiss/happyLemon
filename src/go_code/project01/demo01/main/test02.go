@@ -29,7 +29,7 @@ func main() {
 	// 统计执行时间
 	test28()
 
-	test29(22)
+	test29(2002, 6)
 }
 
 func test21(suffix string) func(string) string {
@@ -156,18 +156,26 @@ func test28() {
 	println("-------------分割线--------------")
 }
 
-func test29(num int) {
-	// 循环打印输入月份的天数，使用continue实现，判断输入的月份是否有误
-	switch num {
+func test29(year int, month int) {
+	// 根据年份和月份，打印当月的天数
+	var num int = 0
+	switch month {
 	case 1, 3, 5, 7, 8, 10, 12:
-		fmt.Println("31天")
+		num = 31
 	case 2:
-		fmt.Println("28天")
+		if year%4 == 0 && year%100 != 0 || year%400 == 0 {
+			num = 29
+		} else {
+			num = 28
+		}
 	case 4, 6, 9, 11:
-		fmt.Println("30天")
+		num = 30
 	default:
 		fmt.Println("输入有误")
 	}
+	fmt.Printf("%v年%v月有%v天\n", year, month, num)
+	// 分割线
+	println("-------------分割线--------------")
 }
 
 func test30() {
