@@ -236,6 +236,8 @@ func test31() {
 			}
 		}
 	}
+	// 分割线
+	println("-------------分割线--------------")
 }
 
 func test32(year int, month int, day int) {
@@ -253,4 +255,6 @@ func test32(year int, month int, day int) {
 	} else {
 		fmt.Println("在", targetDate.Format("2006年1月2日"), "是晒网的日子")
 	}
+	// 分割线
+	println("-------------分割线--------------")
 }
