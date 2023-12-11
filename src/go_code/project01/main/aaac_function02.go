@@ -30,6 +30,9 @@ func main() {
 
 	// defer(延时机制) 关键字
 	test28()
+
+	// 字符串函数
+	test29()
 }
 
 // init函数
@@ -147,4 +150,13 @@ func test28() {
 	fmt.Println("main_res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+}
+
+func test29() {
+	// len函数 用于求长度，比如string、array、slice、map、channel
+	str := "hello北"
+	fmt.Println("str_len=", len(str))
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
 }
