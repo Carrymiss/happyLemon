@@ -260,4 +260,10 @@ func test29() {
 	fmt.Printf("str4=%v str3=%v \n", str4, str3)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 将字符串左右两边的空格去掉
+	str = strings.TrimSpace(" tn a lone gopher ntrn ")
+	fmt.Printf("str=%q \n", str)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
