@@ -284,4 +284,16 @@ func test29() {
 	fmt.Printf("str=%q \n", str)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 判断字符串是否以指定的字符串开头
+	str2 = strings.HasPrefix("ftp://192.168.75.1", "ftp")
+	fmt.Printf("str2=%v \n", str2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	// 判断字符串是否以指定的字符串结尾
+	str2 = strings.HasSuffix("ftp://192.168.75.1", "75.1")
+	fmt.Printf("str2=%v \n", str2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
