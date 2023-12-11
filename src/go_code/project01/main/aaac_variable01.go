@@ -7,6 +7,7 @@ func main() {
 	test37()
 	test38()
 	test39()
+	test40()
 }
 
 func test37() {
@@ -54,4 +55,14 @@ func test39() {
 	fmt.Println("arr4=", arr4)
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test40() {
+	// 数组的遍历
+	var arr2 = [3]int{1, 2, 3}
+	for index, value := range arr2 {
+		fmt.Printf("数组的下标是 %v,该下标的值是 %v /n", index, value)
+		// 分割线
+		println("-------------分割线--------------")
+	}
 }
