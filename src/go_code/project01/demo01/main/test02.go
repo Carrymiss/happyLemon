@@ -35,6 +35,9 @@ func main() {
 
 	// 猜数字
 	test30()
+
+	// 输出100以内的所有素数，每行显示5个，并求和
+	test31()
 }
 
 func test21(suffix string) func(string) string {
@@ -208,4 +211,29 @@ func test30() {
 		}
 	}
 	fmt.Println("你太笨了")
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test31() {
+	// 输出100以内的所有素数，每行显示5个，并求和
+	var sum int = 0
+	var count int = 0
+	for i := 2; i <= 100; i++ {
+		flag := true
+		for j := 2; j <= i/2; j++ {
+			if i%j == 0 {
+				flag = false
+				break
+			}
+		}
+		if flag {
+			fmt.Print(i, "\t")
+			count++
+			sum += i
+			if count%5 == 0 {
+				fmt.Println()
+			}
+		}
+	}
 }
