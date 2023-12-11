@@ -46,6 +46,9 @@ func main() {
 
 	// 计算器
 	test33(10, 20, 1)
+
+	// 输出小写的a-z以及大写的Z-A
+	test34()
 }
 
 func test21(suffix string) func(string) string {
@@ -290,4 +293,27 @@ func test33(num1 float64, num2 float64, operator int) {
 	fmt.Printf("计算结果: %.2f %s %.2f = %.2f\n", num1, operation, num2, result)
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test34() {
+	// 输出小写的a-z以及大写的Z-A
+	fmt.Println("小写的 a-z:")
+	fmt.Println(test35('a', 'z'))
+	fmt.Println("\n大写的 Z-A:")
+	lowerCase := test35('a', 'z')
+	fmt.Println(strings.ToUpper(lowerCase))
+	reversedUpperCase := test36(upperCase)
+	fmt.Println(reversedUpperCase)
+}
+
+func test35(start, end byte) string {
+	str := ""
+	for i := start; i <= end; i++ {
+		str += fmt.Sprintf("%c ", i)
+	}
+	return str
+}
+
+func test36(s string) string {
+
 }
