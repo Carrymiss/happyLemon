@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -23,6 +25,9 @@ func main() {
 
 	// 数组转置
 	test27()
+
+	// 统计执行时间
+	test28()
 }
 
 func test21(suffix string) func(string) string {
@@ -132,6 +137,19 @@ func test27() {
 		}
 		fmt.Println()
 	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test28() {
+	// 统计执行时间
+	start := time.Now().Unix()
+	var str string = ""
+	for i := 0; i < 100000; i++ {
+		str += "hello" + strconv.Itoa(i)
+	}
+	end := time.Now().Unix()
+	fmt.Println("执行时间为：", end-start, "秒")
 	// 分割线
 	println("-------------分割线--------------")
 }
