@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"happyLemon/src/go_code/project01/demo01"
 	"strconv"
+	"strings"
 )
 
 // 定义全局变量
@@ -206,4 +207,12 @@ func test29() {
 	fmt.Printf("对应的16进制是：%v \n", str)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 查找子串是否在指定的字符串中
+	str2 := strings.Contains("seafood", "foo")
+	fmt.Printf("是否存在对应的子串: %v \n", str2)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+
+	//
 }
