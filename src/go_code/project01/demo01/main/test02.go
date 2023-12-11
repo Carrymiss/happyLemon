@@ -269,20 +269,20 @@ func test33(num1 float64, num2 float64, operator int) {
 	switch operator {
 	case 1:
 		result = num1 + num2
-		operation = "加法"
+		operation = "+"
 	case 2:
 		result = num1 - num2
-		operation = "减法"
+		operation = "-"
 	case 3:
 		result = num1 * num2
-		operation = "乘法"
+		operation = "*"
 	case 4:
 		if num2 == 0 {
 			fmt.Println("除数不能为0！")
 			return
 		}
 		result = num1 / num2
-		operation = "除法"
+		operation = "/"
 	default:
 		fmt.Println("无效的操作符！")
 		return
