@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	// new函数
@@ -8,6 +11,9 @@ func main() {
 
 	// 异常处理
 	test33()
+
+	// 自定义错误
+	test35()
 }
 
 func test31() {
@@ -64,4 +70,24 @@ func test34() {
 	fmt.Println("res=", res)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+}
+
+func test35() {
+	// 自定义错误
+	err := test36(10)
+	if err != nil {
+		// 如果出现错误就终止程序
+		panic(err)
+	}
+	fmt.Println("main继续执行")
+	// 分割线
+	fmt.Println("-------------分割线--------------")
+}
+
+func test36(age int) (err error) {
+	if age > 18 {
+		return nil
+	} else {
+		return errors.New("年龄不合法")
+	}
 }
