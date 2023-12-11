@@ -198,4 +198,12 @@ func test29() {
 	fmt.Printf("str=%v \n", str)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 10进制转成其他进制
+	str = strconv.FormatInt(123, 2)
+	fmt.Printf("对应的2进制是：%v \n", str)
+	str = strconv.FormatInt(123, 16)
+	fmt.Printf("对应的16进制是：%v \n", str)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
