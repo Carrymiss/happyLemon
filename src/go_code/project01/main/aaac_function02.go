@@ -214,5 +214,9 @@ func test29() {
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
-	//
+	// 统计一个字符串有几个指定的子串
+	num = strings.Count("ceheese", "e")
+	fmt.Printf("字符串中有%v个e \n", num)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
