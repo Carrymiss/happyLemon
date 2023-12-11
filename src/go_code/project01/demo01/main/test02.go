@@ -49,6 +49,9 @@ func main() {
 
 	// 输出小写的a-z以及大写的Z-A
 	test34()
+
+	// 输入成绩
+	test37()
 }
 
 func test21(suffix string) func(string) string {
@@ -321,4 +324,18 @@ func test36(s string) string {
 		runes[i], runes[j] = runes[j], runes[i]
 	}
 	return string(runes)
+}
+
+func test37() {
+	// 输入5个成绩，保存到数组中并输出
+	var score [5]float64
+	for i := 0; i < len(score); i++ {
+		fmt.Printf("请输入第%v个成绩：", i+1)
+		fmt.Scan(&score[i])
+	}
+	for i := 0; i < len(score); i++ {
+		fmt.Printf("第%v个成绩是%v\n", i+1, score[i])
+	}
+	// 分割线
+	println("-------------分割线--------------")
 }
