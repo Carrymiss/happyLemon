@@ -329,12 +329,9 @@ func test30() {
 	fmt.Println("-------------分割线--------------")
 
 	// 格式化日期时间的第二种方式
-	fmt.Printf(now.Format("2006-01-02 15:04:05"))
-	fmt.Println()
-	fmt.Printf(now.Format("2006-01-02"))
-	fmt.Println()
-	fmt.Printf(now.Format("15:04:05"))
-	fmt.Println()
+	fmt.Printf("%s\n", now.Format("2006-01-02 15:04:05"))
+	fmt.Printf("%s\n", now.Format("2006-01-02"))
+	fmt.Printf("%s\n", now.Format("15:04:05"))
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
