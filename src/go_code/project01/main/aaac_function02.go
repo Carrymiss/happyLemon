@@ -266,4 +266,10 @@ func test29() {
 	fmt.Printf("str=%q \n", str)
 	// 分割线
 	fmt.Println("-------------分割线--------------")
+
+	// 将字符串左右两边指定的字符去掉
+	str = strings.Trim("! hello! ", " !")
+	fmt.Printf("str=%q \n", str)
+	// 分割线
+	fmt.Println("-------------分割线--------------")
 }
