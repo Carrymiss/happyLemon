@@ -161,4 +161,10 @@ func test29() {
 	// 分割线
 	fmt.Println("-------------分割线--------------")
 
+	// 字符串遍历
+	str = "hello北京"
+	str1 := []rune(str) // 将str转换成[]rune切片
+	for i := 0; i < len(str1); i++ {
+		fmt.Printf("%c \n", str1[i])
+	}
 }
