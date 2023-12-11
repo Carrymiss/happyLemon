@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	// 数组
 	test37()
+	test38()
 }
 
 func test37() {
@@ -24,6 +25,16 @@ func test37() {
 	}
 	avgWeight := fmt.Sprintf("%.2f", weight/float64(len(hens)))
 	fmt.Println("总体重是", weight, "平均体重是", avgWeight)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test38() {
+	// 数组的遍历
+	var arr [5]int
+	fmt.Println("数组的默认值是：", arr)
+	// 这里int64占用8个字节，所以个元素的地址相差8个字节，如果是int32则相差4个字节
+	fmt.Printf("数组的地址是：%p,第一个元素的地址是：%p,第二个元素的地址是：%p /n", &arr, &arr[0], &arr[1])
 	// 分割线
 	println("-------------分割线--------------")
 }
