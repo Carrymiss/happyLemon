@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strconv"
 	"strings"
 	"time"
@@ -29,7 +30,11 @@ func main() {
 	// 统计执行时间
 	test28()
 
+	// 输出当前月份的天数
 	test29(2002, 6)
+
+	// 猜数字
+	test30()
 }
 
 func test21(suffix string) func(string) string {
@@ -179,5 +184,31 @@ func test29(year int, month int) {
 }
 
 func test30() {
+	// 随机猜数字 随机生成一个1-100的数，让用户猜，有10次机会 如果第一次就猜对了，就提示"你真是个天才" 如果第2-3次猜对了，就提示"你很聪明" 如果第4-9次猜对了，就提示"你猜对了" 如果第10次猜对了，就提示"可算猜对了" 如果10次都没猜对，就提示"你太笨了"
+	// 设置纳秒级种子
+	rand.Seed(time.Now().UnixNano())
+	target := rand.Intn(100) + 1 // 生成1-100的随机数
+	fmt.Println("作弊程序来了，数字是：", target)
+	for i := 1; i <= 10; i++ {
+		fmt.Print("Enter your guess: ")
+		var guess int
+		_, _ = fmt.Scan(&guess)
+
+		if guess == target {
+			switch {
+			case i == 1:
+				fmt.Println("你真是个天才")
+			case i <= 3:
+				fmt.Println("你很聪明")
+			case i <= 9:
+				fmt.Println("你猜对了")
+			case i == 10:
+				fmt.Println("可算猜对了")
+			}
+			return
+		}
+	}
+
+	fmt.Println("你太笨了")
 
 }
