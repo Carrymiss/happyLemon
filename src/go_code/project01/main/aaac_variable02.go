@@ -85,3 +85,12 @@ func test49() {
 	// 分割符
 	println("-------------分割线--------------")
 }
+
+func test50() {
+	// 给切片追加元素
+	var slice3 = []int{1, 2, 3, 4, 5}
+	slice3 = append(slice3, 6, 7, 8)
+	fmt.Println("当前切片slice3的值是：", slice3)
+	// 分割符
+	println("-------------分割线--------------")
+}
