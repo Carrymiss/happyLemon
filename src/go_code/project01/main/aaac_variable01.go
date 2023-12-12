@@ -78,6 +78,21 @@ func test41() {
 	// 因为是不同的方法栈 而且数组是值拷贝 所以不会改变原数组的值
 	test42(arr)
 	fmt.Println("arr=", arr)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test42(arr [3]int) {
+	arr[0] = 10
+}
+
+func test41() {
+	var arr = [3]int{1, 2, 3}
+	// 因为是不同的方法栈 而且数组是值拷贝 所以不会改变原数组的值
+	test42(arr)
+	fmt.Println("arr=", arr)
+	// 分割线
+	println("-------------分割线--------------")
 }
 
 func test42(arr [3]int) {
