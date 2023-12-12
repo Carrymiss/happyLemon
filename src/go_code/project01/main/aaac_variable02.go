@@ -138,7 +138,7 @@ func test52() {
 	// 分割符
 	println("-------------分割线--------------")
 
-	// 将字符串转换成[]rune类型
+	// 将字符串转换成[]rune类型 可以处理中文字符
 	var str2 = "hello world"
 	var slice2 = []rune(str2) // 将字符串转换成[]rune类型
 	slice2[0] = '你'
