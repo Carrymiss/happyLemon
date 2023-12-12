@@ -6,6 +6,7 @@ func main() {
 	// 切片
 	test45()
 	test46()
+	test47()
 }
 
 func test45() {
@@ -41,10 +42,23 @@ func test45() {
 func test46() {
 	// 第二种创建切片的方式
 	// var 切片名 []类型 = make([]类型,长度,容量)
-	var slice2 []int = make([]int, 5, 10)
+	var slice2 = make([]int, 5, 10)
 	fmt.Println("当前切片的值是：", slice2)
 	fmt.Println("当前切片的元素个数是：", len(slice2))
 	fmt.Println("当前切片的容量是：", cap(slice2))
+	// 分割符
+	println("-------------分割线--------------")
+}
+
+func test47() {
+	// 第三种创建切片的方式
+	// 直接指定数组的值，类似与make的方式
+	// 此时的容量和长度相等
+	// var 切片名 []类型 = []类型{元素1,元素2,...}
+	var slice3 = []int{1, 2, 3, 4, 5}
+	fmt.Println("当前切片的值是：", slice3)
+	fmt.Println("当前切片的元素个数是：", len(slice3))
+	fmt.Println("当前切片的容量是：", cap(slice3))
 	// 分割符
 	println("-------------分割线--------------")
 }
