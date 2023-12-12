@@ -35,6 +35,32 @@ func main() {
 
 	// 猜数字
 	test30()
+	// 分割线
+	println("-------------分割线--------------")
+
+	// 输出100以内的所有素数，每行显示5个，并求和
+	test31()
+
+	// 三天打鱼两天晒网
+	test32(2023, 12, 12)
+
+	// 计算器
+	test33(10, 20, 1)
+
+	// 输出小写的a-z以及大写的Z-A
+	test34()
+
+	// 输入成绩
+	test37()
+
+	// 数组打印
+	test38()
+
+	// 输出数组的最大值和下标
+	test39()
+
+	// 求数组的和和平均值
+	test40()
 }
 
 func test21(suffix string) func(string) string {
@@ -208,4 +234,168 @@ func test30() {
 		}
 	}
 	fmt.Println("你太笨了")
+}
+
+func test31() {
+	// 输出100以内的所有素数，每行显示5个，并求和
+	var count int = 0
+	for i := 2; i <= 100; i++ {
+		flag := true
+		for j := 2; j <= i/2; j++ {
+			if i%j == 0 {
+				flag = false
+			}
+		}
+		if flag {
+			fmt.Print(i, "\t")
+			count++
+			if count%5 == 0 {
+				fmt.Println()
+			}
+		}
+	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test32(year int, month int, day int) {
+	// 从1990年1月1日开始执行三天打鱼两天晒网，问在以后的某一天中，是打鱼还是晒网
+	// 1.计算从1990年1月1日到现在的总天数
+	// 2.计算从1990年1月1日到现在的总天数对5取余数
+	// 3.如果余数为1、2、3则为打鱼，如果余数为4、0则为晒网
+	targetDate := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.Local)
+	startDate := time.Date(1990, time.January, 1, 0, 0, 0, 0, time.Local)
+	days := int(targetDate.Sub(startDate).Hours() / 24)
+	// 计算相差天数对5取余
+	mod := days % 5
+	if mod < 3 {
+		fmt.Println("在", targetDate.Format("2006年1月2日"), "是打鱼的日子")
+	} else {
+		fmt.Println("在", targetDate.Format("2006年1月2日"), "是晒网的日子")
+	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test33(num1 float64, num2 float64, operator int) {
+	// 计算器
+	var result float64
+	var operation string
+	switch operator {
+	case 1:
+		result = num1 + num2
+		operation = "+"
+	case 2:
+		result = num1 - num2
+		operation = "-"
+	case 3:
+		result = num1 * num2
+		operation = "*"
+	case 4:
+		if num2 == 0 {
+			fmt.Println("除数不能为0！")
+			return
+		}
+		result = num1 / num2
+		operation = "/"
+	default:
+		fmt.Println("无效的操作符！")
+		return
+	}
+	fmt.Printf("计算结果: %.2f %s %.2f = %.2f\n", num1, operation, num2, result)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test34() {
+	// 输出小写的a-z以及大写的Z-A
+	fmt.Println("小写的 a-z:")
+	fmt.Println(test35('a', 'z'))
+	fmt.Println("\n大写的 Z-A:")
+	lowerCase := test35('a', 'z')
+	upperCase := strings.ToUpper(lowerCase)
+	reversedUpperCase := test36(upperCase)
+	fmt.Println(reversedUpperCase)
+}
+
+func test35(start, end byte) string {
+	str := ""
+	for i := start; i <= end; i++ {
+		str += fmt.Sprintf("%c ", i)
+	}
+	return str
+}
+
+func test36(s string) string {
+	// 字符串反转
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
+func test37() {
+	// 输入5个成绩，保存到数组中并输出
+	var score [5]float64
+	for i := 0; i < len(score); i++ {
+		fmt.Printf("请输入第%v个成绩：", i+1)
+		fmt.Scan(&score[i])
+	}
+	for i := 0; i < len(score); i++ {
+		fmt.Printf("第%v个成绩是%v\n", i+1, score[i])
+	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test38() {
+	// 创建一个byte类型的26个元素的数组，分别放置'A'-'Z'。使用for循环访问所有元素并打印出来。提示：字符数据运算'A'+1 -> 'B'
+	var arr [26]byte
+	for i := 0; i < len(arr); i++ {
+		arr[i] = 'A' + byte(i)
+	}
+	// 使用range遍历
+	for _, value := range arr {
+		fmt.Printf("%c ", value)
+	}
+	fmt.Println()
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test39() {
+	// 输出数组的最大值和其下标
+	var arr = [...]int{1, 3, 5, 7, 9}
+	maxVal := arr[0]
+	maxIndex := 0
+	for i := 1; i < len(arr); i++ {
+		if arr[i] > maxVal {
+			maxVal = arr[i]
+			maxIndex = i
+		}
+	}
+	fmt.Printf("数组的最大值是%v，下标是%v\n", maxVal, maxIndex)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test40() {
+	// 求数组的和和平均值
+	var arr = [...]float64{1.1, 2.2, 3.3, 4.4, 5.5}
+	sum := 0.0
+	for _, value := range arr {
+		sum += value
+	}
+	fmt.Printf("数组的和是%.2f，平均值是%.2f\n", sum, sum/float64(len(arr)))
+
+	// 假如是int数组
+	var arr2 = [...]int{1, 2, 3, 4, 5}
+	sum2 := 0
+	for _, value := range arr2 {
+		sum2 += value
+	}
+	fmt.Printf("数组的和是%d，平均值是%.2f\n", sum2, float64(sum2)/float64(len(arr2)))
+	// 分割线
+	println("-------------分割线--------------")
 }
