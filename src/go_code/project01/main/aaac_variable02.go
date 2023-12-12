@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	// 切片
 	test45()
+	test46()
 }
 
 func test45() {
@@ -33,6 +34,17 @@ func test45() {
 	slice1[0] = 44
 	fmt.Println("当前切片的值是：", slice1)
 	fmt.Println("当前数组的值是：", arr1)
+	// 分割符
+	println("-------------分割线--------------")
+}
+
+func test46() {
+	// 第二种创建切片的方式
+	// var 切片名 []类型 = make([]类型,长度,容量)
+	var slice2 []int = make([]int, 5, 10)
+	fmt.Println("当前切片的值是：", slice2)
+	fmt.Println("当前切片的元素个数是：", len(slice2))
+	fmt.Println("当前切片的容量是：", cap(slice2))
 	// 分割符
 	println("-------------分割线--------------")
 }
