@@ -55,6 +55,9 @@ func main() {
 
 	// 数组打印
 	test38()
+
+	// 输出数组的最大值和下标
+	test39()
 }
 
 func test21(suffix string) func(string) string {
@@ -353,6 +356,7 @@ func test38() {
 	for _, value := range arr {
 		fmt.Printf("%c ", value)
 	}
+	fmt.Println()
 	// 分割线
 	println("-------------分割线--------------")
 }
