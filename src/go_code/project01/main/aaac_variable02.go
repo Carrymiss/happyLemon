@@ -8,6 +8,7 @@ func main() {
 	test46()
 	test47()
 	test48()
+	test49()
 }
 
 func test45() {
@@ -70,6 +71,17 @@ func test48() {
 	for index, value := range slice3 {
 		fmt.Printf("当前切片的下标是：%v，值是：%v \n", index, value)
 	}
+	// 分割符
+	println("-------------分割线--------------")
+}
+
+func test49() {
+	// 切片可以继续切片
+	var slice3 = []int{1, 2, 3, 4, 5}
+	var slice4 = slice3[1:]
+	fmt.Println("当前切片slice4的值是：", slice4)
+	var slice5 = slice4[:2]
+	fmt.Println("当前切片slice5的值是：", slice5)
 	// 分割符
 	println("-------------分割线--------------")
 }
