@@ -9,6 +9,9 @@ import (
 func main() {
 	// 随机生成5个数，并将其反转打印
 	test41()
+
+	// 将斐波那契数列的前50个数放到切片中
+	test42(50)
 }
 
 func test41() {
@@ -26,6 +29,19 @@ func test41() {
 		arr[i], arr[len(arr)-1-i] = arr[len(arr)-1-i], arr[i]
 	}
 	fmt.Println("此时生成是数组是：", arr)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test42(num int) {
+	// 将斐波那契数列的前50个数放到切片中
+	var slice1 []uint64 = make([]uint64, num)
+	slice1[0] = 1
+	slice1[1] = 1
+	for i := 2; i < len(slice1); i++ {
+		slice1[i] = slice1[i-1] + slice1[i-2]
+	}
+	fmt.Println("此时生成的切片是：", slice1)
 	// 分割线
 	println("-------------分割线--------------")
 }
