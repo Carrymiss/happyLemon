@@ -89,7 +89,8 @@ func test42(arr [3]int) {
 
 func test43() {
 	var arr = [3]int{1, 2, 3}
-	// 因为是不同的方法栈 而且数组是值拷贝 所以不会改变原数组的值
+	// 拿到数组的首地址 并输出当前的值
+	fmt.Printf("拿到数组的首地址是：%p,此时的值是 %v \n", &arr, arr)
 	test44(&arr)
 	fmt.Println("arr=", arr)
 	// 分割线
@@ -98,4 +99,5 @@ func test43() {
 
 func test44(arr *[3]int) {
 	(*arr)[0] = 10
+	fmt.Printf("拿到数组的首地址是：%p,此时的值是 %v \n", &arr, arr)
 }
