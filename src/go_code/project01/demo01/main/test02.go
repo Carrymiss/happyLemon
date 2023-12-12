@@ -353,4 +353,22 @@ func test38() {
 	for _, value := range arr {
 		fmt.Printf("%c ", value)
 	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test39() {
+	// 输出数组的最大值和其下标
+	var arr = [...]int{1, 3, 5, 7, 9}
+	maxVal := arr[0]
+	maxIndex := 0
+	for i := 1; i < len(arr); i++ {
+		if arr[i] > maxVal {
+			maxVal = arr[i]
+			maxIndex = i
+		}
+	}
+	fmt.Printf("数组的最大值是%v，下标是%v\n", maxVal, maxIndex)
+	// 分割线
+	println("-------------分割线--------------")
 }
