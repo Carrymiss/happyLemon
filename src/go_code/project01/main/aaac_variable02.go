@@ -10,6 +10,7 @@ func main() {
 	test48()
 	test49()
 	test50()
+	test51()
 }
 
 func test45() {
@@ -97,8 +98,19 @@ func test50() {
 
 	// 追加切片
 	var slice4 = []int{11, 22, 33}
+	// 这三个点必须带上
 	slice3 = append(slice3, slice4...)
 	fmt.Println("当前切片slice3的值是：", slice3)
+	// 分割符
+	println("-------------分割线--------------")
+}
+
+func test51() {
+	// 切片的拷贝
+	var slice3 = []int{1, 2, 3, 4, 5}
+	var slice4 = make([]int, 10)
+	copy(slice4, slice3) // 将slice3拷贝到slice4中
+	fmt.Println("当前切片slice4的值是：", slice4)
 	// 分割符
 	println("-------------分割线--------------")
 }
