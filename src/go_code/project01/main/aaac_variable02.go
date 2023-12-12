@@ -128,4 +128,23 @@ func test53() {
 
 func test52() {
 	// 如果需要修改字符串，可以先将其转换成[]rune或[]byte，进行修改，完成后再转换为string。无论哪种转换，都会重新分配内存，并复制字节数组。
+	// 将字符串转换成[]byte类型
+	var str = "hello world"
+	var slice1 = []byte(str) // 将字符串转换成[]byte类型
+	slice1[0] = 'H'
+	// 将[]byte转换成string类型
+	str = string(slice1)
+	fmt.Println("当前字符串str的值是：", str)
+	// 分割符
+	println("-------------分割线--------------")
+
+	// 将字符串转换成[]rune类型
+	var str2 = "hello world"
+	var slice2 = []rune(str2) // 将字符串转换成[]rune类型
+	slice2[0] = 'H'
+	// 将[]rune转换成string类型
+	str2 = string(slice2)
+	fmt.Println("当前字符串str2的值是：", str2)
+	// 分割符
+	println("-------------分割线--------------")
 }
