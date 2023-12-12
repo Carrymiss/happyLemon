@@ -9,6 +9,7 @@ func main() {
 	test47()
 	test48()
 	test49()
+	test50()
 }
 
 func test45() {
@@ -90,6 +91,13 @@ func test50() {
 	// 给切片追加元素
 	var slice3 = []int{1, 2, 3, 4, 5}
 	slice3 = append(slice3, 6, 7, 8)
+	fmt.Println("当前切片slice3的值是：", slice3)
+	// 分割符
+	println("-------------分割线--------------")
+
+	// 追加切片
+	var slice4 = []int{11, 22, 33}
+	slice3 = append(slice3, slice4...)
 	fmt.Println("当前切片slice3的值是：", slice3)
 	// 分割符
 	println("-------------分割线--------------")
