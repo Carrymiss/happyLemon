@@ -58,6 +58,9 @@ func main() {
 
 	// 输出数组的最大值和下标
 	test39()
+
+	// 求数组的和和平均值
+	test40()
 }
 
 func test21(suffix string) func(string) string {
@@ -373,6 +376,26 @@ func test39() {
 		}
 	}
 	fmt.Printf("数组的最大值是%v，下标是%v\n", maxVal, maxIndex)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test40() {
+	// 求数组的和和平均值
+	var arr = [...]float64{1.1, 2.2, 3.3, 4.4, 5.5}
+	sum := 0.0
+	for _, value := range arr {
+		sum += value
+	}
+	fmt.Printf("数组的和是%.2f，平均值是%.2f\n", sum, sum/float64(len(arr)))
+
+	// 假如是int数组
+	var arr2 = [...]int{1, 2, 3, 4, 5}
+	sum2 := 0
+	for _, value := range arr2 {
+		sum2 += value
+	}
+	fmt.Printf("数组的和是%d，平均值是%.2f\n", sum2, float64(sum2)/float64(len(arr2)))
 	// 分割线
 	println("-------------分割线--------------")
 }
