@@ -141,7 +141,7 @@ func test52() {
 	// 将字符串转换成[]rune类型
 	var str2 = "hello world"
 	var slice2 = []rune(str2) // 将字符串转换成[]rune类型
-	slice2[0] = 'H'
+	slice2[0] = '你'
 	// 将[]rune转换成string类型
 	str2 = string(slice2)
 	fmt.Println("当前字符串str2的值是：", str2)
