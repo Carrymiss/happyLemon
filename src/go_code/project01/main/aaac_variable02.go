@@ -11,6 +11,8 @@ func main() {
 	test49()
 	test50()
 	test51()
+	test53()
+	test52()
 }
 
 func test45() {
@@ -113,4 +115,17 @@ func test51() {
 	fmt.Println("当前切片slice4的值是：", slice4)
 	// 分割符
 	println("-------------分割线--------------")
+}
+
+func test53() {
+	// string的底层是一个byte数组，因此string也可以进行切片处理
+	var str = "hello world"
+	var slice1 = str[1:3]
+	fmt.Println("当前切片slice1的值是：", slice1)
+	// 分割符
+	println("-------------分割线--------------")
+}
+
+func test52() {
+	// 如果需要修改字符串，可以先将其转换成[]rune或[]byte，进行修改，完成后再转换为string。无论哪种转换，都会重新分配内存，并复制字节数组。
 }
