@@ -52,6 +52,9 @@ func main() {
 
 	// 输入成绩
 	test37()
+
+	// 数组打印
+	test38()
 }
 
 func test21(suffix string) func(string) string {
@@ -338,4 +341,16 @@ func test37() {
 	}
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test38() {
+	// 创建一个byte类型的26个元素的数组，分别放置'A'-'Z'。使用for循环访问所有元素并打印出来。提示：字符数据运算'A'+1 -> 'B'
+	var arr [26]byte
+	for i := 0; i < len(arr); i++ {
+		arr[i] = 'A' + byte(i)
+	}
+	// 使用range遍历
+	for _, value := range arr {
+		fmt.Printf("%c ", value)
+	}
 }
