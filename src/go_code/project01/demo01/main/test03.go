@@ -31,6 +31,9 @@ func main() {
 	// 数组arr [10]string里面保存了10个元素，查找“AA”是否存在，输出其下标 可能存在多个“AA” 也要输出其下标
 	var arr = [10]string{"AA", "BB", "CC", "AA", "AA", "AA", "AA", "AA", "AA", "AA"}
 	test52(arr)
+
+	// 查找当前数组中最大数和最小数，已经对应的下标
+	test53()
 }
 
 func test41() {
@@ -257,5 +260,37 @@ func test52(arr [10]string) {
 	fmt.Println("AA的下标是：", indexes)
 	// 分割线
 	println("-------------分割线--------------")
+}
 
+func test53() {
+	// 查找当前数组中最大数和最小数，已经对应的下标
+	var arr [10]int
+	// 设置纳秒级种子
+	rand.Seed(time.Now().UnixNano())
+	for index, _ := range arr {
+		arr[index] = rand.Intn(10000) + 1
+	}
+	fmt.Println("此时生成是数组是：", arr)
+	// 求最大值及其坐标
+	var max int = arr[0]
+	var maxIndex int = 0
+	for index, value := range arr {
+		if value > max {
+			max = value
+			maxIndex = index
+		}
+	}
+	fmt.Printf("最大值是：%v,最大值的下标是：%v \n", max, maxIndex)
+	// 求最小值及其坐标
+	var min int = arr[0]
+	var minIndex int = 0
+	for index, value := range arr {
+		if value < min {
+			min = value
+			minIndex = index
+		}
+	}
+	fmt.Printf("最小值是：%v,最小值的下标是：%v \n", min, minIndex)
+	// 分割线
+	println("-------------分割线--------------")
 }
