@@ -18,6 +18,9 @@ func main() {
 
 	// 随机生成10个整数(1-100的范围)保存到数组，并倒序打印以及求平均值，求最大值、最大值的下标、最小值、最小值的下标，并查找里面是否有55
 	test44()
+
+	// 有个升序好的数组，现在插入一个数，要求此数组依然是升序
+	test49()
 }
 
 func test41() {
@@ -158,6 +161,32 @@ func test48(arr [10]int, num int) {
 	if leftIndex > rightIndex {
 		fmt.Println("没有找到")
 	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test49() {
+	// 有个升序好的数组，现在插入一个数，要求此数组依然是升序
+	var arr = [5]int{1, 2, 3, 4, 5}
+	var num int = 3
+	var index int = 0
+	for i := 0; i < len(arr); i++ {
+		if arr[i] > num {
+			index = i
+			break
+		}
+	}
+	var arr2 [6]int
+	for i := 0; i < len(arr2); i++ {
+		if i < index {
+			arr2[i] = arr[i]
+		} else if i == index {
+			arr2[i] = num
+		} else {
+			arr2[i] = arr[i-1]
+		}
+	}
+	fmt.Println("插入后的数组是：", arr2)
 	// 分割线
 	println("-------------分割线--------------")
 }
