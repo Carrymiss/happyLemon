@@ -74,7 +74,7 @@ func test43() {
 }
 
 func test44() {
-	// 随机生成10个整数(1-100的范围)保存到数组，并倒序打印以及求平均值，求最大值、最大值的下标、最小值、最小值的下标，并查找里面是否有55
+	// 随机生成10个整数(1-100的范围)保存到数组，并倒序打印以及求平均值，求最大值、最大值的下标，并查找里面是否有55
 	// 设置纳秒级种子
 	rand.Seed(time.Now().UnixNano())
 	var arr [10]int
@@ -86,10 +86,9 @@ func test44() {
 	// 倒序打印
 	test45(arr)
 	// 求最大值
+	test46(arr)
 	// 求平均值
-	for index, value = range arr {
-		sum += value
-	}
+	test47(arr)
 }
 func test45(arr [10]int) {
 	// 倒序打印
@@ -97,4 +96,21 @@ func test45(arr [10]int) {
 		arr[i], arr[len(arr)-1-i] = arr[len(arr)-1-i], arr[i]
 	}
 	fmt.Println("倒叙打印数组为：", arr)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test46(arr [10]int) {
+	// 求最大值及其坐标
+	var max int = arr[0]
+	var maxIndex int = 0
+	for index, value := range arr {
+		if value > max {
+			max = value
+			maxIndex = index
+		}
+	}
+	fmt.Printf("最大值是：%v,最大值的下标是：%v \n", max, maxIndex)
+	// 分割线
+	println("-------------分割线--------------")
 }
