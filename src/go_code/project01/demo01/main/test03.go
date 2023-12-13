@@ -24,6 +24,9 @@ func main() {
 
 	// 定义一个3行4列的二维数组，编写程序将四周的数据清0
 	test50()
+
+	// 定义一个4行4列的二维数组，将二维数组的第一行和第四行进行交换，第二行和第三行进行交换
+	test51()
 }
 
 func test41() {
@@ -212,6 +215,26 @@ func test50() {
 				arr[i][j] = 0
 			}
 		}
+	}
+	fmt.Println("此时生成的数组是：", arr)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test51() {
+	// 定义一个4行4列的二维数组，将二维数组的第一行和第四行进行交换，第二行和第三行进行交换
+	var arr [4][4]int
+	// 设置纳秒级种子
+	rand.Seed(time.Now().UnixNano())
+	for index1, value1 := range arr {
+		for index2, _ := range value1 {
+			arr[index1][index2] = rand.Intn(100) + 1
+		}
+	}
+	fmt.Println("此时生成的数组是：", arr)
+	// 交换
+	for i := 0; i < len(arr)/2; i++ {
+		arr[i], arr[len(arr)-1-i] = arr[len(arr)-1-i], arr[i]
 	}
 	fmt.Println("此时生成的数组是：", arr)
 	// 分割线
