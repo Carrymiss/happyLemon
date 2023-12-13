@@ -21,6 +21,9 @@ func main() {
 
 	// 有个升序好的数组，现在插入一个数，要求此数组依然是升序
 	test49()
+
+	// 定义一个3行4列的二维数组，逐个从键盘输入值，编写程序将四周的数据清0
+	test50()
 }
 
 func test41() {
@@ -187,6 +190,29 @@ func test49() {
 		}
 	}
 	fmt.Println("插入后的数组是：", arr2)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test50() {
+	// 定义一个3行4列的二维数组，逐个从键盘输入值，编写程序将四周的数据清0
+	var arr [3][4]int
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[i]); j++ {
+			fmt.Printf("请输入第%v行第%v列的值：", i+1, j+1)
+			fmt.Scanln(&arr[i][j])
+		}
+	}
+	fmt.Println("此时生成的数组是：", arr)
+	// 将四周的数据清0
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[i]); j++ {
+			if i == 0 || i == len(arr)-1 || j == 0 || j == len(arr[i])-1 {
+				arr[i][j] = 0
+			}
+		}
+	}
+	fmt.Println("此时生成的数组是：", arr)
 	// 分割线
 	println("-------------分割线--------------")
 }
