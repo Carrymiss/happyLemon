@@ -15,6 +15,9 @@ func main() {
 
 	// 定义一个二维数组用来保存三个班，每个班五名同学的成绩，并求出每个班的平均分和所有班级的平均分
 	test43()
+
+	// 随机生成10个整数(1-100的范围)保存到数组，并倒序打印以及求平均值，求最大值、最大值的下标、最小值、最小值的下标，并查找里面是否有55
+	test44()
 }
 
 func test41() {
@@ -68,4 +71,30 @@ func test43() {
 	fmt.Println("每个班的平均分是：", arr3)
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test44() {
+	// 随机生成10个整数(1-100的范围)保存到数组，并倒序打印以及求平均值，求最大值、最大值的下标、最小值、最小值的下标，并查找里面是否有55
+	// 设置纳秒级种子
+	rand.Seed(time.Now().UnixNano())
+	var arr [10]int
+	// 组装数组
+	for index, _ := range arr {
+		arr[index] = rand.Intn(100) + 1
+	}
+	fmt.Println("此时生成是数组是：", arr)
+	// 倒序打印
+	test45(arr)
+	// 求最大值
+	// 求平均值
+	for index, value = range arr {
+		sum += value
+	}
+}
+func test45(arr [10]int) {
+	// 倒序打印
+	for i := 0; i < len(arr)/2; i++ {
+		arr[i], arr[len(arr)-1-i] = arr[len(arr)-1-i], arr[i]
+	}
+	fmt.Println("倒叙打印数组为：", arr)
 }
