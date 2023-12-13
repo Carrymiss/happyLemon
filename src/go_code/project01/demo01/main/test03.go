@@ -27,6 +27,10 @@ func main() {
 
 	// 定义一个4行4列的二维数组，将二维数组的第一行和第四行进行交换，第二行和第三行进行交换
 	test51()
+
+	// 数组arr [10]string里面保存了10个元素，查找“AA”是否存在，输出其下标 可能存在多个“AA” 也要输出其下标
+	var arr = [10]string{"AA", "BB", "CC", "AA", "AA", "AA", "AA", "AA", "AA", "AA"}
+	test52(arr)
 }
 
 func test41() {
@@ -239,4 +243,19 @@ func test51() {
 	fmt.Println("此时生成的数组是：", arr)
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test52(arr [10]string) {
+	// 数组arr [10]string里面保存了10个元素，查找“AA”是否存在，输出其下标 可能存在多个“AA” 也要输出其下标
+	// 定义一个切片用来保存下标
+	var indexes []int
+	for index, value := range arr {
+		if value == "AA" {
+			indexes = append(indexes, index)
+		}
+	}
+	fmt.Println("AA的下标是：", indexes)
+	// 分割线
+	println("-------------分割线--------------")
+
 }
