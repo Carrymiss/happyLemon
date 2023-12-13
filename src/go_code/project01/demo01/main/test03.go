@@ -22,7 +22,7 @@ func main() {
 	// 有个升序好的数组，现在插入一个数，要求此数组依然是升序
 	test49()
 
-	// 定义一个3行4列的二维数组，逐个从键盘输入值，编写程序将四周的数据清0
+	// 定义一个3行4列的二维数组，编写程序将四周的数据清0
 	test50()
 }
 
@@ -195,12 +195,13 @@ func test49() {
 }
 
 func test50() {
-	// 定义一个3行4列的二维数组，逐个从键盘输入值，编写程序将四周的数据清0
+	// 定义一个3行4列的二维数组，编写程序将四周的数据清0
 	var arr [3][4]int
-	for i := 0; i < len(arr); i++ {
-		for j := 0; j < len(arr[i]); j++ {
-			fmt.Printf("请输入第%v行第%v列的值：", i+1, j+1)
-			fmt.Scanln(&arr[i][j])
+	// 设置纳秒级种子
+	rand.Seed(time.Now().UnixNano())
+	for index1, value1 := range arr {
+		for index2, _ := range value1 {
+			arr[index1][index2] = rand.Intn(100) + 1
 		}
 	}
 	fmt.Println("此时生成的数组是：", arr)
