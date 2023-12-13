@@ -114,3 +114,14 @@ func test46(arr [10]int) {
 	// 分割线
 	println("-------------分割线--------------")
 }
+
+func test47(arr [10]int) {
+	// 求平均值
+	var sum int = 0
+	for _, value := range arr {
+		sum += value
+	}
+	fmt.Printf("平均值是：%v \n", float64(sum)/float64(len(arr)))
+	// 分割线
+	println("-------------分割线--------------")
+}
