@@ -89,6 +89,8 @@ func test44() {
 	test46(arr)
 	// 求平均值
 	test47(arr)
+	// 查找里面是否有55
+	test48(arr, 55)
 }
 func test45(arr [10]int) {
 	// 倒序打印
@@ -122,6 +124,40 @@ func test47(arr [10]int) {
 		sum += value
 	}
 	fmt.Printf("平均值是：%v \n", float64(sum)/float64(len(arr)))
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test48(arr [10]int, num int) {
+	// 查找数组是否含有某个数 使用二分法
+	// 将数组进行从小到大排序
+	for i := 0; i < len(arr)-1; i++ {
+		for j := 0; j < len(arr)-1-i; j++ {
+			if arr[j] > arr[j+1] {
+				arr[j], arr[j+1] = arr[j+1], arr[j]
+			}
+		}
+	}
+	fmt.Println("从小到大排序后的数组是: ", arr)
+	// 使用二分法查找
+	var leftIndex int = 0
+	var rightIndex int = len(arr) - 1
+	var midIndex int = (leftIndex + rightIndex) / 2
+	for leftIndex <= rightIndex {
+		if arr[midIndex] == num {
+			fmt.Printf("找到了，下标是：%v \n", midIndex)
+			break
+		} else if arr[midIndex] > num {
+			rightIndex = midIndex - 1
+			midIndex = (leftIndex + rightIndex) / 2
+		} else {
+			leftIndex = midIndex + 1
+			midIndex = (leftIndex + rightIndex) / 2
+		}
+	}
+	if leftIndex > rightIndex {
+		fmt.Println("没有找到")
+	}
 	// 分割线
 	println("-------------分割线--------------")
 }
