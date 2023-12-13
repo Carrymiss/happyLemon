@@ -37,6 +37,9 @@ func main() {
 
 	// 找出当前数组大于平均值以及小于平均值的个数
 	test54()
+
+	// 存放学生的姓名和性别 使用map
+	test55()
 }
 
 func test41() {
@@ -321,6 +324,20 @@ func test54() {
 		}
 	}
 	fmt.Printf("当前数组大于平均值的个数是：%v,当前数组小于平均值的个数是：%v \n", moreTh, lessTh)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test55() {
+	// 存放学生的姓名和性别 使用map
+	var stuMap = make(map[string]map[string]string)
+	stuMap["stu01"] = make(map[string]string, 2)
+	stuMap["stu01"]["name"] = "tom"
+	stuMap["stu01"]["sex"] = "男"
+	stuMap["stu02"] = make(map[string]string, 2)
+	stuMap["stu02"]["name"] = "jack"
+	stuMap["stu02"]["sex"] = "女"
+	fmt.Println("stuMap=", stuMap)
 	// 分割线
 	println("-------------分割线--------------")
 }
