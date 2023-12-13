@@ -6,6 +6,7 @@ func main() {
 	// 二维数组
 	test58()
 	test59()
+	test60()
 }
 
 func test58() {
@@ -42,6 +43,19 @@ func test59() {
 
 	arr1 := [...][3]int{{1, 2, 3}, {4, 5, 6}}
 	fmt.Println("arr1=", arr1)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test60() {
+	// 二维数组遍历 for range方式
+	var arr = [2][3]int{{1, 2, 3}, {4, 5, 6}}
+	for index, value := range arr {
+		for index1, value1 := range value {
+			fmt.Printf("arr[%v][%v]=%v ", index, index1, value1)
+		}
+		fmt.Println()
+	}
 	// 分割线
 	println("-------------分割线--------------")
 }
