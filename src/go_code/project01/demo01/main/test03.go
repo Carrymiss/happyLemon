@@ -34,6 +34,9 @@ func main() {
 
 	// 查找当前数组中最大数和最小数，已经对应的下标
 	test53()
+
+	// 找出当前数组大于平均值以及小于平均值的个数
+	test54()
 }
 
 func test41() {
@@ -133,7 +136,7 @@ func test46(arr [10]int) {
 	println("-------------分割线--------------")
 }
 
-func test47(arr [10]int) {
+func test47(arr [10]int) float64 {
 	// 求平均值
 	var sum int = 0
 	for _, value := range arr {
@@ -142,6 +145,7 @@ func test47(arr [10]int) {
 	fmt.Printf("平均值是：%v \n", float64(sum)/float64(len(arr)))
 	// 分割线
 	println("-------------分割线--------------")
+	return float64(sum) / float64(len(arr))
 }
 
 func test48(arr [10]int, num int) {
@@ -291,6 +295,32 @@ func test53() {
 		}
 	}
 	fmt.Printf("最小值是：%v,最小值的下标是：%v \n", min, minIndex)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test54() {
+	// 找出当前数组大于平均值以及小于平均值的个数
+	var arr [10]int
+	rand.Seed(time.Now().UnixNano())
+	for index, _ := range arr {
+		arr[index] = rand.Intn(10000) + 1
+	}
+	fmt.Println("此时生成的数组是：", arr)
+	// 求平均值
+	var avgF float64 = test47(arr)
+	// 大于平均数的数
+	var moreTh int
+	// 小于平均数的数
+	var lessTh int
+	for _, value := range arr {
+		if float64(value) > avgF {
+			moreTh++
+		} else if float64(value) < avgF {
+			lessTh++
+		}
+	}
+	fmt.Printf("当前数组大于平均值的个数是：%v,当前数组小于平均值的个数是：%v \n", moreTh, lessTh)
 	// 分割线
 	println("-------------分割线--------------")
 }
