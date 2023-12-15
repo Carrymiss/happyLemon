@@ -6,6 +6,7 @@ func main() {
 	// map
 	test61()
 	test62()
+	test63()
 }
 
 func test61() {
@@ -47,4 +48,36 @@ func test62() {
 	fmt.Println("a2的值是：", a2)
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test63() {
+	// map的增删改查
+	// 增加
+	var a = make(map[string]string, 10)
+	a["no1"] = "宋江"
+	a["no2"] = "吴用"
+	a["no3"] = "武松"
+	fmt.Println("a的值是：", a)
+	// 分割线
+	println("-------------分割线--------------")
+
+	// 修改
+	a["no3"] = "武大郎"
+	fmt.Println("a的值是：", a)
+	// 分割线
+	println("-------------分割线--------------")
+
+	// 删除
+	delete(a, "no3")
+	fmt.Println("a的值是：", a)
+	// 分割线
+	println("-------------分割线--------------")
+
+	// 查找
+	val, fin := a["no3"]
+	if fin {
+		fmt.Println("a的值是：", val)
+	} else {
+		fmt.Println("没有找到no3")
+	}
 }
