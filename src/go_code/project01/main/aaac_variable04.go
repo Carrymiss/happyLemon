@@ -8,6 +8,7 @@ func main() {
 	test62()
 	test63()
 	test64()
+	test66()
 }
 
 func test61() {
@@ -115,6 +116,10 @@ func test66() {
 	students["no1"] = stu1
 	students["no2"] = stu2
 	fmt.Println("students的值是：", students)
+
+	for k, v := range students {
+		fmt.Printf("学生的编号是：%v，学生的姓名是：%v，学生的年龄是：%v，学生的地址是：%v\n", k, v.Name, v.Age, v.Address)
+	}
 	// 分割线
 	println("-------------分割线--------------")
 }
