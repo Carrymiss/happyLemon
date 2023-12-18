@@ -40,6 +40,11 @@ func main() {
 
 	// 存放学生的姓名和性别 使用map
 	test55()
+
+	// 使用map[string]map[string]string的map类型
+	// key 表示用户名，是唯一的，不可以重复
+	// 如果某个用户名存在，就将其密码修改"888888"，如果不存在就增加这个用户信息
+	test56()
 }
 
 func test41() {
@@ -338,6 +343,39 @@ func test55() {
 	stuMap["stu02"]["name"] = "jack"
 	stuMap["stu02"]["sex"] = "女"
 	fmt.Println("stuMap=", stuMap)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test56() {
+	var userMap = make(map[string]map[string]string)
+	userMap["user01"] = make(map[string]string, 2)
+	userMap["user01"]["password"] = "123456"
+	userMap["user01"]["name"] = "tom"
+	userMap["user02"] = make(map[string]string, 2)
+	userMap["user02"]["password"] = "123456"
+	userMap["user02"]["name"] = "jack"
+	fmt.Println("userMap=", userMap)
+	test57(userMap, "tom", "123456")
+	test57(userMap, "user02", "123456")
+}
+
+func test57(users map[string]map[string]string, username string, password string) {
+	// 使用map[string]map[string]string的map类型
+	// key 表示用户名，是唯一的，不可以重复
+	// 如果某个用户名存在，就将其密码修改"888888"，如果不存在就增加这个用户信息
+	// 判断用户名是否存在
+	_, fin := users[username]
+	if fin {
+		// 存在
+		users[username]["password"] = "888888"
+	} else {
+		// 不存在
+		users[username] = make(map[string]string, 2)
+		users[username]["password"] = password
+		users[username]["name"] = username
+	}
+	fmt.Println("userMap=", users)
 	// 分割线
 	println("-------------分割线--------------")
 }
