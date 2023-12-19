@@ -145,4 +145,31 @@ func test68() {
 	// 声明结构体的方式
 	var stu1 = stu{"tom", 18, "北京"}
 	fmt.Println("stu1的值是：", stu1)
+
+	// 声明结构体的方式 这种方式声明出来的是结构体的指针类型
+	var stu2 = new(stu)
+	(*stu2).Name = "mary"
+	(*stu2).Age = 28
+	(*stu2).Address = "上海"
+	fmt.Println("stu2的值是：", *stu2)
+
+	// go语言的作者优化了上面的申明 也可以用如下方式
+	// 在底层加上了(*stu3) 也就是取值运算
+	var stu3 = new(stu)
+	stu3.Name = "mary"
+	stu3.Age = 28
+	stu3.Address = "上海"
+	fmt.Println("stu3的值是：", *stu3)
+
+	// 结构体的声明
+	var stu4 = &stu{"mary", 28, "上海"}
+	fmt.Println("stu4的值是：", *stu4)
+	var stu5 = &stu{}
+	stu5.Name = "mary"
+	stu5.Age = 28
+	stu5.Address = "上海"
+	fmt.Println("stu5的值是：", *stu5)
+
+	// 分割线
+	println("-------------分割线--------------")
 }
