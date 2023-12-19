@@ -8,7 +8,10 @@ func main() {
 	test62()
 	test63()
 	test64()
+
+	// 结构体
 	test66()
+	test67()
 }
 
 func test61() {
@@ -122,4 +125,15 @@ func test66() {
 	}
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func test67() {
+	var stu1 stu
+	stu1.Name = "tom"
+	stu1.Age = 18
+	stu1.Address = "北京"
+	stu2 := stu1
+	stu2.Name = "mary"
+	fmt.Println("stu1的值是：", stu1)
+	fmt.Println("stu2的值是：", stu2)
 }
