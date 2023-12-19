@@ -12,6 +12,7 @@ func main() {
 	// 结构体
 	test66()
 	test67()
+	test68()
 }
 
 func test61() {
@@ -136,4 +137,12 @@ func test67() {
 	stu2.Name = "mary"
 	fmt.Println("stu1的值是：", stu1)
 	fmt.Println("stu2的值是：", stu2)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test68() {
+	// 声明结构体的方式
+	var stu1 = stu{"tom", 18, "北京"}
+	fmt.Println("stu1的值是：", stu1)
 }
