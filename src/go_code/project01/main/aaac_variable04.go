@@ -13,6 +13,8 @@ func main() {
 	test66()
 	test67()
 	test68()
+	test69()
+	test70()
 }
 
 func test61() {
@@ -170,6 +172,37 @@ func test68() {
 	stu5.Address = "上海"
 	fmt.Println("stu5的值是：", *stu5)
 
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test69() {
+	// 结构体字段在内存中是连续存在的
+	var stu1 = stu{"tom", 18, "北京"}
+	fmt.Printf("stu1的Name的地址是：%p\n", &stu1.Name)
+	fmt.Printf("stu1的Age的地址是：%p\n", &stu1.Age)
+	fmt.Printf("stu1的Address的地址是：%p\n", &stu1.Address)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+type Rect struct {
+	leftUp, rightDown Point
+}
+
+type Point struct {
+	x int
+	y int
+}
+
+func test70() {
+	// 结构体嵌套
+	r1 := Rect{Point{1, 2}, Point{3, 4}}
+	fmt.Println("r1的值是：", r1)
+	fmt.Printf("r1的leftUp,x的地址是：%p\n", &r1.leftUp.x)
+	fmt.Printf("r1的leftUp,y的地址是：%p\n", &r1.leftUp.y)
+	fmt.Printf("r1的rightDown,x的地址是：%p\n", &r1.rightDown.x)
+	fmt.Printf("r1的rightDown,y的地址是：%p\n", &r1.rightDown.y)
 	// 分割线
 	println("-------------分割线--------------")
 }
