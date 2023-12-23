@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	// 方法的使用
 	test72()
+	test75()
 }
 
 type Person struct {
@@ -19,8 +20,21 @@ func test72() {
 	p.Name = "tom"
 	p.Age = 18
 	p.test73()
+	// 分割线
+	println("-------------分割线--------------")
 }
 
 func (p Person) test73() {
 	fmt.Println("test73() name=", p.Name)
+}
+
+func (p1 Person) test74() {
+	fmt.Printf("%v是个好人 \n", p1.Name)
+}
+
+func test75() {
+	var p Person
+	p.Name = "tom"
+	p.Age = 18
+	p.test74()
 }
