@@ -40,15 +40,27 @@ func test75() {
 	p.Age = 18
 	p.test74()
 	p.test76()
+	p.test77(100)
 }
 
 func (p1 Person) test76() {
 	// 计算从1到1000相加
 	var sum int
-	for i := 1; i < 1000; i++ {
+	for i := 1; i <= 1000; i++ {
 		sum += i
 	}
 	fmt.Println("从1到1000相加的结果是：", sum)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func (p1 Person) test77(n1 int) {
+	// 计算从1到入参相加
+	var sum int
+	for i := 1; i <= n1; i++ {
+		sum += i
+	}
+	fmt.Printf("从1到%v相加的结果是：%v\n", n1, sum)
 	// 分割线
 	println("-------------分割线--------------")
 }
