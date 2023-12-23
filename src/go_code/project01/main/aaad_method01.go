@@ -7,6 +7,7 @@ func main() {
 	test72()
 	test75()
 	test80()
+	test82()
 }
 
 type Person struct {
