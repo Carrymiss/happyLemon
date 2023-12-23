@@ -81,6 +81,14 @@ func test80() {
 	fmt.Println("面积是：", c1.test79())
 	// 分割线
 	println("-------------分割线--------------")
+
+	var c2 Circle
+	c2.Radius = 4.0
+	// 这里的c2是指针类型，所以要用(&c2)
+	// 编译器底层做了优化，可以直接用c2
+	fmt.Println("面积是：", c2.test81())
+	// 分割线
+	println("-------------分割线--------------")
 }
 
 type Circle struct {
@@ -89,4 +97,10 @@ type Circle struct {
 
 func (c1 Circle) test79() float64 {
 	return 3.14 * c1.Radius * c1.Radius
+}
+
+func (c2 *Circle) test81() float64 {
+	// 这里的c2是指针类型，所以要用(*c2)
+	// 编译器底层做了优化，可以直接用c2
+	return 3.14 * c2.Radius * c2.Radius
 }
