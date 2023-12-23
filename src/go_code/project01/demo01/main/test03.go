@@ -45,6 +45,9 @@ func main() {
 	// key 表示用户名，是唯一的，不可以重复
 	// 如果某个用户名存在，就将其密码修改"888888"，如果不存在就增加这个用户信息
 	test56()
+
+	// 编写结构体，在方法中打印10*8的矩阵
+	test58()
 }
 
 func test41() {
@@ -376,6 +379,25 @@ func test57(users map[string]map[string]string, username string, password string
 		users[username]["name"] = username
 	}
 	fmt.Println("userMap=", users)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+type method1 struct {
+}
+
+func test58() {
+	// 编写结构体，在方法中打印10*8的矩阵
+	var m method1
+	m.test59()
+}
+func (m method1) test59() {
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 8; j++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
 	// 分割线
 	println("-------------分割线--------------")
 }
