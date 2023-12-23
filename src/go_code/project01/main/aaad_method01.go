@@ -104,3 +104,27 @@ func (c2 *Circle) test81() float64 {
 	// 编译器底层做了优化，可以直接用c2
 	return 3.14 * c2.Radius * c2.Radius
 }
+
+type stundent struct {
+	Name   string
+	Age    int
+	Adress string
+}
+
+// 给*stundent实现string方法
+func (stu *stundent) String() string {
+	str := fmt.Sprintf("Name=[%v] Age=[%v] Adress=[%v]", stu.Name, stu.Age, stu.Adress)
+	return str
+}
+
+func test82() {
+	// 自定义类型
+	var stu stundent
+	stu.Name = "tom"
+	stu.Age = 18
+	stu.Adress = "北京"
+	// 这里是因为stu实现了string方法，所以可以直接打印
+	fmt.Println(&stu)
+	// 分割线
+	println("-------------分割线--------------")
+}
