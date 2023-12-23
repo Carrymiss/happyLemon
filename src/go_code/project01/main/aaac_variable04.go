@@ -212,9 +212,9 @@ func test70() {
 }
 
 type Monster struct {
-	Name  string
-	Age   int
-	Skill string
+	Name  string `json:"name"`
+	Age   int    `json:"age"`
+	Skill string `json:"skill"`
 }
 
 func test71() {
@@ -233,6 +233,9 @@ func test71() {
 	}
 	// 将byte转成字符串
 	fmt.Println("序列化后的变量：", string(marshal))
+
+	// 存在的问题 转换后的属性名称和go中定义的一样 但是有些语言需要小写 因此需要通过tag标签
+
 	// 分割线
 	println("-------------分割线--------------")
 }
