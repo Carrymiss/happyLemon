@@ -6,6 +6,7 @@ func main() {
 	// 方法的使用
 	test72()
 	test75()
+	test80()
 }
 
 type Person struct {
@@ -72,4 +73,20 @@ func (p1 Person) test77(n1 int) {
 func (p1 Person) test78(n1 int, n2 int) int {
 	// 计算从2数的和并返回
 	return n1 + n2
+}
+
+func test80() {
+	var c1 Circle
+	c1.Radius = 4.0
+	fmt.Println("面积是：", c1.test79())
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+type Circle struct {
+	Radius float64
+}
+
+func (c1 Circle) test79() float64 {
+	return 3.14 * c1.Radius * c1.Radius
 }
