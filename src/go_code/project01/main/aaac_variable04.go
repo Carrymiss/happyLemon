@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 func main() {
 	// map
@@ -15,6 +18,7 @@ func main() {
 	test68()
 	test69()
 	test70()
+	test71()
 }
 
 func test61() {
@@ -203,6 +207,31 @@ func test70() {
 	fmt.Printf("r1的leftUp,y的地址是：%p\n", &r1.leftUp.y)
 	fmt.Printf("r1的rightDown,x的地址是：%p\n", &r1.rightDown.x)
 	fmt.Printf("r1的rightDown,y的地址是：%p\n", &r1.rightDown.y)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+type Monster struct {
+	Name  string
+	Age   int
+	Skill string
+}
+
+func test71() {
+	// 结构体的初始化
+	// 1.顺序初始化
+	var monster1 Monster
+	monster1.Name = "牛魔王"
+	monster1.Age = 500
+	monster1.Skill = "牛魔拳"
+	fmt.Println("monster1的值是：", monster1)
+
+	// 将变量序列化
+	marshal, err := json.Marshal(monster1)
+	if err != nil {
+		fmt.Println("json序列化异常")
+	}
+	fmt.Println("序列化后的变量：", marshal)
 	// 分割线
 	println("-------------分割线--------------")
 }
