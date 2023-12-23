@@ -390,10 +390,23 @@ func test58() {
 	// 编写结构体，在方法中打印10*8的矩阵
 	var m method1
 	m.test59()
+	m.test60(2, 3)
 }
+
 func (m method1) test59() {
 	for i := 0; i < 10; i++ {
 		for j := 0; j < 8; j++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func (m method1) test60(num1 int, num2 int) {
+	for i := 0; i < num1; i++ {
+		for j := 0; j < num2; j++ {
 			fmt.Print("*")
 		}
 		fmt.Println()
