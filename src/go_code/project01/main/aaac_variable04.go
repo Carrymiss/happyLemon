@@ -231,7 +231,8 @@ func test71() {
 	if err != nil {
 		fmt.Println("json序列化异常")
 	}
-	fmt.Println("序列化后的变量：", marshal)
+	// 将byte转成字符串
+	fmt.Println("序列化后的变量：", string(marshal))
 	// 分割线
 	println("-------------分割线--------------")
 }
