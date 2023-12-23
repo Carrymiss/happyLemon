@@ -41,6 +41,10 @@ func test75() {
 	p.test74()
 	p.test76()
 	p.test77(100)
+	var n1 = p.test78(100, 1)
+	fmt.Println("两数相加的和是：", n1)
+	// 分割线
+	println("-------------分割线--------------")
 }
 
 func (p1 Person) test76() {
@@ -63,4 +67,9 @@ func (p1 Person) test77(n1 int) {
 	fmt.Printf("从1到%v相加的结果是：%v\n", n1, sum)
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+func (p1 Person) test78(n1 int, n2 int) int {
+	// 计算从2数的和并返回
+	return n1 + n2
 }
