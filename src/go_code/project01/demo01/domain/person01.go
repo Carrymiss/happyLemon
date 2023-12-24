@@ -1,5 +1,7 @@
 package domain
 
+import "fmt"
+
 type person struct {
 	Name string
 	age  int
@@ -40,4 +42,34 @@ func (p *person) SetSal(sal float64) {
 
 func (p *person) GetSal() float64 {
 	return p.sal
+}
+
+type account struct {
+	// 账号 长度在6-10位
+	AccountNo string
+	// 密码 必须是6位
+	Password string
+	// 余额 必须大于20
+	Balance float64
+}
+
+// 工厂函数 相当于构造函数
+func NewAccount(accountNo string, password string, balance float64) *account {
+	if len(accountNo) < 6 || len(accountNo) > 10 {
+		fmt.Println("账号长度不正确")
+		return nil
+	}
+	if len(password) != 6 {
+		fmt.Println("密码长度不正确")
+		return nil
+	}
+	if balance < 20 {
+		fmt.Println("余额数目不正确")
+		return nil
+	}
+	return &account{
+		AccountNo: accountNo,
+		Password:  password,
+		Balance:   balance,
+	}
 }
