@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"happyLemon/src/go_code/project01/demo01"
+	"happyLemon/src/go_code/project01/demo01/domain"
 )
 
 func main() {
@@ -11,6 +12,9 @@ func main() {
 
 	// 工厂模式
 	test84()
+
+	// 封装
+	test85()
 }
 
 type stundent1 struct {
@@ -32,6 +36,16 @@ func test84() {
 	person := demo01.NewPerson("tom", 18)
 	fmt.Println(*person)
 	fmt.Println("name =", person.Name, "age =", person.GetAge())
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test85() {
+	per := domain.NewPerson("tom")
+	per.SetAge(18)
+	per.SetSal(3000)
+	fmt.Println(*per)
+	fmt.Println("name =", per.Name, "age =", per.GetAge(), "sal =", per.GetSal())
 	// 分割线
 	println("-------------分割线--------------")
 }
