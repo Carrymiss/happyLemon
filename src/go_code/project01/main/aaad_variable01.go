@@ -31,7 +31,7 @@ func test83() {
 func test84() {
 	person := demo01.NewPerson("tom", 18)
 	fmt.Println(*person)
-	fmt.Println("name =", person.Name, "age =", person.Age)
+	fmt.Println("name =", person.Name, "age =", person.GetAge())
 	// 分割线
 	println("-------------分割线--------------")
 }

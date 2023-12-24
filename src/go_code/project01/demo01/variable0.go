@@ -40,3 +40,8 @@ func NewPerson(name string, age int) *person1 {
 		Age:  age,
 	}
 }
+
+func (per *person1) GetAge() int {
+	// 这里因为编译器底层做了优化 本来是(*per).Age
+	return per.Age
+}
