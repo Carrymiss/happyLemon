@@ -22,3 +22,21 @@ func Test01(n1 float64, n2 float64, operator byte) float64 {
 	}
 	return res
 }
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+type person1 struct {
+	Name string
+	Age  int
+}
+
+// 大写的是可以外部引用 小写的想要引用就需要用到工厂模式
+func NewPerson(name string, age int) *person1 {
+	return &person1{
+		Name: name,
+		Age:  age,
+	}
+}
