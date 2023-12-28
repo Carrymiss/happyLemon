@@ -1,8 +1,12 @@
 package main
 
+import "fmt"
+
 func main() {
 	// 接口
 	test87()
+	// 多态
+	test88()
 }
 
 type Usb interface {
@@ -49,6 +53,18 @@ func test87() {
 	// 这里体现了多态的特性
 	c.Working(Phone{"vivo"})
 	c.Working(Camera{"尼康"})
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test88() {
+	// 多态的体现 ---》 接口数组
+	// 定义一个Usb接口数组，可以存放Phone和Camera的结构体变量
+	var usbArr [3]Usb
+	usbArr[0] = Phone{"vivo"}
+	usbArr[1] = Phone{"小米"}
+	usbArr[2] = Camera{"尼康"}
+	fmt.Println(usbArr)
 	// 分割线
 	println("-------------分割线--------------")
 }
