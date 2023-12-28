@@ -46,6 +46,7 @@ func (c Computer) Working(usb Usb) {
 
 func test87() {
 	var c Computer
+	// 这里体现了多态的特性
 	c.Working(Phone{"vivo"})
 	c.Working(Camera{"尼康"})
 	// 分割线
