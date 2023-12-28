@@ -7,6 +7,8 @@ func main() {
 	test87()
 	// 多态
 	test88()
+	// 类型断言
+	test89()
 }
 
 type Usb interface {
@@ -65,6 +67,26 @@ func test88() {
 	usbArr[1] = Phone{"小米"}
 	usbArr[2] = Camera{"尼康"}
 	fmt.Println(usbArr)
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+// 类型断言(带检测)
+type Point01 struct {
+	x int
+	y int
+}
+
+func test89() {
+	// a是空接口类型，可以接收任意类型
+	var a interface{}
+	var point Point01 = Point01{1, 2}
+	a = point
+	var b Point01
+	// 这里的b是Point01类型，所以要用(b)
+	// 编译器底层做了优化，可以直接用b
+	b = a.(Point01)
+	fmt.Println(b)
 	// 分割线
 	println("-------------分割线--------------")
 }
