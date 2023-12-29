@@ -61,8 +61,18 @@ func displayPage() {
 			// 将本次支出情况,拼接到details变量
 			details += fmt.Sprintf("\n支出\t%v\t%v\t%v", balance, money, note)
 		case "4":
-			fmt.Println("退出软件")
-			loop = false
+			fmt.Println("你确定要退出吗? y/n")
+			choice := ""
+			for {
+				fmt.Scanln(&choice)
+				if choice == "y" || choice == "n" {
+					break
+				}
+				fmt.Println("你的输入有误,请重新输入 y/n")
+			}
+			if choice == "y" {
+				loop = false
+			}
 		default:
 			fmt.Println("请输入正确的选项")
 		}
