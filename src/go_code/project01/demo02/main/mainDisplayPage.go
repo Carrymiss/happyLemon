@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	// 面向过程
 	displayPage()
 }
 

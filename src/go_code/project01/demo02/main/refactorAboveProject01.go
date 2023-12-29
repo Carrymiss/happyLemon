@@ -2,12 +2,16 @@ package main
 
 import "fmt"
 
+func main() {
+	// TODO 在上个项目中无法使用这样的调用
+	NewFamilyAccount().mainMenu()
+}
+
 type FamilyAccount struct {
 	// 声明一个变量,保存接收用户输入的选项
 	key string
 	// 声明一个变量,控制是否退出for
 	loop bool
-
 	// 定义账户的余额
 	balance float64
 	// 每次收支的金额
@@ -21,7 +25,7 @@ type FamilyAccount struct {
 	details string
 }
 
-// 工厂模式的构造函数
+// NewFamilyAccount 工厂模式的构造函数
 func NewFamilyAccount() *FamilyAccount {
 	return &FamilyAccount{
 		key:     "",
