@@ -21,6 +21,19 @@ type FamilyAccount struct {
 	details string
 }
 
+// 工厂模式的构造函数
+func NewFamilyAccount() *FamilyAccount {
+	return &FamilyAccount{
+		key:     "",
+		loop:    true,
+		balance: 10000.0,
+		money:   0.0,
+		note:    "",
+		flag:    false,
+		details: "收支\t账户金额\t收支金额\t说    明",
+	}
+}
+
 // 将显示明细写成一个方法
 func (a *FamilyAccount) showDetails() {
 	if a.flag {
