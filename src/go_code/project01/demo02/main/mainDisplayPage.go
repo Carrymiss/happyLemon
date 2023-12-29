@@ -32,24 +32,24 @@ func displayPage() {
 		fmt.Println("                  3 登记支出")
 		fmt.Println("                  4 退出软件")
 		fmt.Print("请选择(1-4):")
-		fmt.Scanln(&key)
+		_, _ = fmt.Scanln(&key)
 		switch key {
 		case "1":
 			fmt.Println("----------------当前收支明细记录----------------")
 			fmt.Println(details)
 		case "2":
 			fmt.Println("本次收入金额:")
-			fmt.Scanln(&money)
+			_, _ = fmt.Scanln(&money)
 			balance += money // 修改账户余额
 			fmt.Println("本次收入说明:")
-			fmt.Scanln(&note)
+			_, _ = fmt.Scanln(&note)
 			// 将本次收入情况,拼接到details变量
 			// 收入    11000    1000    有人发红包
 			//details += fmt.Sprintf("\n收入\t%v\t%v\t%v", balance, money, note)
 			details += fmt.Sprintf("\n收入\t%v\t%v\t%v", balance, money, note)
 		case "3":
 			fmt.Println("本次支出金额:")
-			fmt.Scanln(&money)
+			_, _ = fmt.Scanln(&money)
 			// 这里需要做一个必要的判断
 			if money > balance {
 				fmt.Println("余额的金额不足")
@@ -57,14 +57,14 @@ func displayPage() {
 			}
 			balance -= money // 修改账户余额
 			fmt.Println("本次支出说明:")
-			fmt.Scanln(&note)
+			_, _ = fmt.Scanln(&note)
 			// 将本次支出情况,拼接到details变量
 			details += fmt.Sprintf("\n支出\t%v\t%v\t%v", balance, money, note)
 		case "4":
 			fmt.Println("你确定要退出吗? y/n")
 			choice := ""
 			for {
-				fmt.Scanln(&choice)
+				_, _ = fmt.Scanln(&choice)
 				if choice == "y" || choice == "n" {
 					break
 				}
