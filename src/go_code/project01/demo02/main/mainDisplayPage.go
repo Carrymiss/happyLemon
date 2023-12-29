@@ -48,7 +48,18 @@ func displayPage() {
 			//details += fmt.Sprintf("\n收入\t%v\t%v\t%v", balance, money, note)
 			details += fmt.Sprintf("\n收入\t%v\t%v\t%v", balance, money, note)
 		case "3":
-			fmt.Println("登记支出")
+			fmt.Println("本次支出金额:")
+			fmt.Scanln(&money)
+			// 这里需要做一个必要的判断
+			if money > balance {
+				fmt.Println("余额的金额不足")
+				break
+			}
+			balance -= money // 修改账户余额
+			fmt.Println("本次支出说明:")
+			fmt.Scanln(&note)
+			// 将本次支出情况,拼接到details变量
+			details += fmt.Sprintf("\n支出\t%v\t%v\t%v", balance, money, note)
 		case "4":
 			fmt.Println("退出软件")
 			loop = false
