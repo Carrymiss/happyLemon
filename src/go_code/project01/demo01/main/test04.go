@@ -31,6 +31,9 @@ func main() {
 
 	// 先读后追加
 	test67()
+
+	// 将一个文件的内容写入到另一个文件中
+	test68()
 }
 
 type Calcuator struct {
@@ -199,4 +202,24 @@ func test67() {
 	println("写入完成")
 	// 分割线
 	println("-------------分割线--------------")
+}
+
+// TODO 这个写入直接将原来的内容覆盖了
+func test68() {
+	// 将一个文件的内容写入到另一个文件中 将1.txt的内容写入到2.txt中
+	path1 := "C:/Users/Rei/Desktop/1.txt"
+	path2 := "C:/Users/Rei/Desktop/2.txt"
+
+	// 读取文件内容
+	data, err1 := ioutil.ReadFile(path1)
+	if err1 != nil {
+		fmt.Println("读取文件失败=", err1)
+		return
+	}
+
+	err2 := ioutil.WriteFile(path2, data, 0666)
+	if err2 != nil {
+		fmt.Println("写入文件失败=", err2)
+		return
+	}
 }
