@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"io"
 	"os"
 )
@@ -16,7 +17,7 @@ func test90() {
 	// 打开文件
 	file, err := os.Open("C:/Users/Rei/Desktop/1.txt")
 	if err != nil {
-		println("打开文件失败=", err)
+		fmt.Println("打开文件失败=", err)
 	}
 
 	// 读取文件
@@ -25,10 +26,10 @@ func test90() {
 	if err != nil {
 		println("读取文件失败=", err)
 	}
-	println("读取的字节数=", n)
-	println("读取的内容=", string(buf[:n]))
+	fmt.Println("读取的字节数=", n)
+	fmt.Println("读取的内容=", string(buf[:n]))
 	// 分割符
-	println("-------------分割线--------------")
+	fmt.Println("-------------分割线--------------")
 
 	// 关闭文件
 	defer func(file *os.File) {
@@ -43,7 +44,7 @@ func test91() {
 	// 打开文件
 	file, err := os.Open("C:/Users/Rei/Desktop/1.txt")
 	if err != nil {
-		println("打开文件失败=", err)
+		fmt.Println("打开文件失败=", err)
 	}
 
 	// 读取文件
@@ -56,16 +57,17 @@ func test91() {
 		if err == io.EOF {
 			break
 		}
-		println("读取的内容=", readString)
+		fmt.Println("读取的内容=", readString)
 	}
+
 	// 分割符
-	println("-------------分割线--------------")
+	fmt.Println("-------------分割线--------------")
 
 	// 关闭文件
 	defer func(file *os.File) {
 		err := file.Close()
 		if err != nil {
-			println("关闭文件失败=", err)
+			fmt.Println("关闭文件失败=", err)
 		}
 	}(file)
 }
