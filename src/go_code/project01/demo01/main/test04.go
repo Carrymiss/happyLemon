@@ -24,6 +24,9 @@ func main() {
 
 	// 打开一个存在的文件 重新弄定义原来的内容
 	test65()
+
+	// 追加内容
+	test66()
 }
 
 type Calcuator struct {
@@ -130,7 +133,7 @@ func test65() {
 
 func test66() {
 	// 追加内容
-	file, err := os.OpenFile("C:/Users/Rei/Desktop/2.txt", os.O_WRONLY|os.O_TRUNC, 0666)
+	file, err := os.OpenFile("C:/Users/Rei/Desktop/2.txt", os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		fmt.Println("打开文件失败=", err)
 	}
@@ -144,7 +147,7 @@ func test66() {
 
 	// 准备写入5句 hello Gardon
 	// 换行有些编译器是\r 有些是\n
-	str := "hello World!\r\n"
+	str := "追加内容！！!\r\n"
 	// 写入时，使用带缓存的 *Writer
 	writer := bufio.NewWriter(file)
 	for i := 0; i < 10; i++ {
