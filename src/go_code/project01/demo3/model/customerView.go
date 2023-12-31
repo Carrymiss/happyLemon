@@ -50,6 +50,27 @@ func (cv *CustomerView) add() {
 	}
 }
 
+// 删除客户的方法
+func (cv *CustomerView) delete() {
+	fmt.Println("---------------------------删除客户---------------------------")
+	fmt.Println("请选择待删除客户编号(-1退出):")
+	id := -1
+	_, _ = fmt.Scanln(&id)
+	if id == -1 {
+		return
+	}
+	fmt.Println("确认是否删除(Y/N):")
+	choice := ""
+	_, _ = fmt.Scanln(&choice)
+	if choice == "y" || choice == "Y" {
+		if cv.CustomerService.Delete(id) {
+			fmt.Println("---------------------------删除成功---------------------------")
+		} else {
+			fmt.Println("---------------------------删除失败---------------------------")
+		}
+	}
+}
+
 // MainMenu 显示主菜单
 func (cv *CustomerView) MainMenu() {
 	for {
