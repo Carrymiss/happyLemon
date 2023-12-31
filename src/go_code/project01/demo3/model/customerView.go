@@ -71,6 +71,21 @@ func (cv *CustomerView) delete() {
 	}
 }
 
+// 退出软件
+func (cv *CustomerView) exit() {
+	fmt.Println("确认是否退出(Y/N):")
+	for {
+		_, _ = fmt.Scanln(&cv.Key)
+		if cv.Key == "y" || cv.Key == "Y" || cv.Key == "n" || cv.Key == "N" {
+			break
+		}
+		fmt.Println("你的输入有误,请重新输入(Y/N):")
+	}
+	if cv.Key == "y" || cv.Key == "Y" {
+		cv.Loop = false
+	}
+}
+
 // MainMenu 显示主菜单
 func (cv *CustomerView) MainMenu() {
 	for {
@@ -88,11 +103,11 @@ func (cv *CustomerView) MainMenu() {
 		case "2":
 			fmt.Println("修改客户")
 		case "3":
-			fmt.Println("删除客户")
+			cv.delete()
 		case "4":
 			cv.list()
 		case "5":
-			cv.Loop = false
+			cv.exit()
 		default:
 			fmt.Println("你的输入有误,请重新输入...")
 		}
