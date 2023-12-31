@@ -6,3 +6,13 @@ type CustomerService struct {
 	// 声明一个字段,表示当前切片含有多少个客户
 	customerNum int
 }
+
+// 返回一个 *CustomerService
+func NewCustomerService() *CustomerService {
+	// 为了能够看到有客户在切片中,我们初始化一个客户
+	customerService := &CustomerService{}
+	customerService.customerNum = 1
+	customer := NewCustomer(1, "张三", "男", 20, "110", "11231188@qq.com")
+	customerService.customers = append(customerService.customers, customer)
+	return customerService
+}
