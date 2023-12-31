@@ -21,6 +21,9 @@ func main() {
 
 	// 创建一个新文件 打印五次 hello Gardon
 	test64()
+
+	// 打开一个存在的文件 重新弄定义原来的内容
+	test65()
 }
 
 type Calcuator struct {
@@ -91,7 +94,65 @@ func test64() {
 	}
 	// 因为writer是带缓存的，因此在调用WriterString方法时，其实内容是先写入到缓存的，所以需要调用Flush方法，将缓存的数据真正写入到文件中，否则文件中会没有数据
 	_ = writer.Flush()
+	println("写入完成")
+	// 分割线
+	println("-------------分割线--------------")
+}
 
+func test65() {
+	// 打开一个存在的文件 重新弄定义原来的内容
+	file, err := os.OpenFile("C:/Users/Rei/Desktop/2.txt", os.O_WRONLY|os.O_TRUNC, 0666)
+	if err != nil {
+		fmt.Println("打开文件失败=", err)
+	}
+	// 关闭文件
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			fmt.Println("关闭文件失败=", err)
+		}
+	}(file)
+
+	// 准备写入5句 hello Gardon
+	// 换行有些编译器是\r 有些是\n
+	str := "hello World!\r\n"
+	// 写入时，使用带缓存的 *Writer
+	writer := bufio.NewWriter(file)
+	for i := 0; i < 10; i++ {
+		_, _ = writer.WriteString(str)
+	}
+	// 因为writer是带缓存的，因此在调用WriterString方法时，其实内容是先写入到缓存的，所以需要调用Flush方法，将缓存的数据真正写入到文件中，否则文件中会没有数据
+	_ = writer.Flush()
+	println("写入完成")
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test66() {
+	// 追加内容
+	file, err := os.OpenFile("C:/Users/Rei/Desktop/2.txt", os.O_WRONLY|os.O_TRUNC, 0666)
+	if err != nil {
+		fmt.Println("打开文件失败=", err)
+	}
+	// 关闭文件
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			fmt.Println("关闭文件失败=", err)
+		}
+	}(file)
+
+	// 准备写入5句 hello Gardon
+	// 换行有些编译器是\r 有些是\n
+	str := "hello World!\r\n"
+	// 写入时，使用带缓存的 *Writer
+	writer := bufio.NewWriter(file)
+	for i := 0; i < 10; i++ {
+		_, _ = writer.WriteString(str)
+	}
+	// 因为writer是带缓存的，因此在调用WriterString方法时，其实内容是先写入到缓存的，所以需要调用Flush方法，将缓存的数据真正写入到文件中，否则文件中会没有数据
+	_ = writer.Flush()
+	println("写入完成")
 	// 分割线
 	println("-------------分割线--------------")
 }
