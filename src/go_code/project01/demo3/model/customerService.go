@@ -43,6 +43,17 @@ func (cs *CustomerService) Delete(id int) bool {
 	return true
 }
 
+// Update 根据id修改客户信息
+func (cs *CustomerService) Update(id int, customer Customer) bool {
+	// 修改切片中的指定元素
+	cs.customers[id].Name = customer.Name
+	cs.customers[id].Gender = customer.Gender
+	cs.customers[id].Email = customer.Email
+	cs.customers[id].Phone = customer.Phone
+	cs.customers[id].Age = customer.Age
+	return true
+}
+
 // FindById 先找到该客户对应的下标
 func (cs *CustomerService) FindById(id int) int {
 	index := -1

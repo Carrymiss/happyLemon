@@ -86,6 +86,46 @@ func (cv *CustomerView) exit() {
 	}
 }
 
+// 修改客户的方法
+func (cv *CustomerView) update() {
+	fmt.Println("---------------------------修改客户---------------------------")
+	fmt.Println("请选择待修改客户编号(-1退出):")
+	id := -1
+	_, _ = fmt.Scanln(&id)
+	if id == -1 {
+		return
+	}
+	// 根据id查找客户是否存在
+	index := cv.CustomerService.FindById(id)
+	if index == -1 {
+		fmt.Println("没有找到该用户")
+		return
+	}
+	// 修改客户信息
+	fmt.Println("姓名:")
+	name := ""
+	_, _ = fmt.Scanln(&name)
+	fmt.Println("性别:")
+	gender := ""
+	_, _ = fmt.Scanln(&gender)
+	fmt.Println("年龄:")
+	age := 0
+	_, _ = fmt.Scanln(&age)
+	fmt.Println("电话:")
+	phone := ""
+	_, _ = fmt.Scanln(&phone)
+	fmt.Println("邮箱:")
+	email := ""
+	_, _ = fmt.Scanln(&email)
+	// 构建一个新的Customer实例
+	customer := NewCustomer2(name, gender, age, phone, email)
+	if cv.CustomerService.Update(id, customer) {
+		fmt.Println("---------------------------修改完成---------------------------")
+	} else {
+		fmt.Println("---------------------------修改失败---------------------------")
+	}
+}
+
 // MainMenu 显示主菜单
 func (cv *CustomerView) MainMenu() {
 	for {
@@ -101,7 +141,7 @@ func (cv *CustomerView) MainMenu() {
 		case "1":
 			cv.add()
 		case "2":
-			fmt.Println("修改客户")
+			cv.update()
 		case "3":
 			cv.delete()
 		case "4":
