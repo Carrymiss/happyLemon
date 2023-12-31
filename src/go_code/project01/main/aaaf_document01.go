@@ -87,31 +87,3 @@ func test92() {
 	// 分割符
 	fmt.Println("-------------分割线--------------")
 }
-
-func test93() {
-	// 打开文件
-	file, err := os.OpenFile("C:/Users/Rei/Desktop/1.txt", os.O_RDWR|os.O_APPEND, 0666)
-	if err != nil {
-		fmt.Println("打开文件失败=", err)
-	}
-
-	// 写入文件
-	// 创建一个*Writer 默认缓冲区为4096
-	writer1 := bufio.NewWriter(file)
-	// 写入文件
-	writer1.WriteString("hello world\r\n")
-	writer1.WriteString("hello golang\r\n")
-	// 将缓冲区的数据写入文件
-	writer1.Flush()
-	fmt.Println("写入文件结束")
-	// 分割符
-	fmt.Println("-------------分割线--------------")
-
-	// 关闭文件
-	defer func(file *os.File) {
-		err := file.Close()
-		if err != nil {
-			fmt.Println("关闭文件失败=", err)
-		}
-	}(file)
-}
