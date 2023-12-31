@@ -7,7 +7,7 @@ type CustomerService struct {
 	customerNum int
 }
 
-// 返回一个 *CustomerService
+// NewCustomerService 返回一个 *CustomerService
 func NewCustomerService() *CustomerService {
 	// 为了能够看到有客户在切片中,我们初始化一个客户
 	customerService := &CustomerService{}
@@ -15,4 +15,9 @@ func NewCustomerService() *CustomerService {
 	customer := NewCustomer(1, "张三", "男", 20, "110", "11231188@qq.com")
 	customerService.customers = append(customerService.customers, customer)
 	return customerService
+}
+
+// List 返回客户切片
+func (cs *CustomerService) List() []Customer {
+	return cs.customers
 }

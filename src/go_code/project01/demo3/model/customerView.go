@@ -6,6 +6,8 @@ type CustomerView struct {
 	// 定义必要字段
 	Key  string // 接收用户输入
 	Loop bool   // 表示是否循环的显示主菜单
+	// 增加一个字段customerService
+	CustomerService *CustomerService
 }
 
 // 显示主菜单
