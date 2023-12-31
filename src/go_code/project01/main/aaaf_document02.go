@@ -25,6 +25,7 @@ func test93() {
 	println("-------------分割线--------------")
 }
 
+// TODO 这个为啥只生成了文件 没有拷贝内容
 func test94(path1 string, path2 string) (written int64, err error) {
 	// 读取文件内容
 	srcFile, err1 := os.Open(path1)
@@ -34,7 +35,7 @@ func test94(path1 string, path2 string) (written int64, err error) {
 	// 通过srcFile获取到	reader
 	reader := bufio.NewReader(srcFile)
 
-	file, err := os.OpenFile(path2, os.O_RDWR|os.O_APPEND, 0666)
+	file, err := os.OpenFile(path2, os.O_WRONLY|os.O_CREATE, 0666)
 	if err != nil {
 		fmt.Println("打开文件失败=", err)
 	}
