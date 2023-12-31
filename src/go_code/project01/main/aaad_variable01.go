@@ -15,6 +15,9 @@ func main() {
 
 	// 封装
 	test85()
+
+	// 练习
+	test86()
 }
 
 type stundent1 struct {
@@ -46,6 +49,14 @@ func test85() {
 	per.SetSal(3000)
 	fmt.Println(*per)
 	fmt.Println("name =", per.Name, "age =", per.GetAge(), "sal =", per.GetSal())
+	// 分割线
+	println("-------------分割线--------------")
+}
+
+func test86() {
+	account := domain.NewAccount("111113232", "123456", 3000)
+	fmt.Println(*account)
+	fmt.Println("accountNo =", account.AccountNo, "password =", account.Password, "balance =", account.Balance)
 	// 分割线
 	println("-------------分割线--------------")
 }
