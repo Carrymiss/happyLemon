@@ -10,7 +10,20 @@ type CustomerView struct {
 	CustomerService *CustomerService
 }
 
-// 显示主菜单
+// 显示所有的客户信息
+func (cv *CustomerView) list() {
+	// 首先,获取到当前所有的客户信息(在切片中)
+	customers := cv.CustomerService.List()
+	// 显示
+	fmt.Println("---------------------------客户列表---------------------------")
+	fmt.Println("编号\t姓名\t性别\t年龄\t电话\t邮箱")
+	for i := 0; i < len(customers); i++ {
+		fmt.Println(customers[i].GetInfo())
+	}
+	fmt.Printf("\n-------------------------客户列表完成-------------------------\n\n")
+}
+
+// MainMenu 显示主菜单
 func (cv *CustomerView) MainMenu() {
 	for {
 		fmt.Println("----------------客户信息管理软件----------------")
