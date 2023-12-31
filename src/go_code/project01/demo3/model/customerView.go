@@ -23,6 +23,33 @@ func (cv *CustomerView) list() {
 	fmt.Printf("\n-------------------------客户列表完成-------------------------\n\n")
 }
 
+// 添加客户的方法
+func (cv *CustomerView) add() {
+	fmt.Println("---------------------------添加客户---------------------------")
+	fmt.Println("姓名:")
+	name := ""
+	_, _ = fmt.Scanln(&name)
+	fmt.Println("性别:")
+	gendre := ""
+	_, _ = fmt.Scanln(&gendre)
+	fmt.Println("年龄:")
+	age := 0
+	_, _ = fmt.Scanln(&age)
+	fmt.Println("电话:")
+	phone := ""
+	_, _ = fmt.Scanln(&phone)
+	fmt.Println("邮箱:")
+	email := ""
+	_, _ = fmt.Scanln(&email)
+	// 构建一个新的Customer实例
+	customer := NewCustomer2(name, gendre, age, phone, email)
+	if cv.CustomerService.Add(customer) {
+		fmt.Println("---------------------------添加完成---------------------------")
+	} else {
+		fmt.Println("---------------------------添加失败---------------------------")
+	}
+}
+
 // MainMenu 显示主菜单
 func (cv *CustomerView) MainMenu() {
 	for {
@@ -42,7 +69,7 @@ func (cv *CustomerView) MainMenu() {
 		case "3":
 			fmt.Println("删除客户")
 		case "4":
-			fmt.Println("客户列表")
+			cv.list()
 		case "5":
 			cv.Loop = false
 		default:

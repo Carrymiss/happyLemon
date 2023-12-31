@@ -21,3 +21,12 @@ func NewCustomerService() *CustomerService {
 func (cs *CustomerService) List() []Customer {
 	return cs.customers
 }
+
+// Add 添加客户到customers切片
+func (cs *CustomerService) Add(customer Customer) bool {
+	// 我们确定一个分配id的规则,就是添加的顺序
+	cs.customerNum++
+	customer.Id = cs.customerNum
+	cs.customers = append(cs.customers, customer)
+	return true
+}
