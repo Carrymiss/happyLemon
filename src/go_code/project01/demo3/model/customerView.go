@@ -2,14 +2,14 @@ package model
 
 import "fmt"
 
-type customerView struct {
+type CustomerView struct {
 	// 定义必要字段
-	key  string // 接收用户输入
-	loop bool   // 表示是否循环的显示主菜单
+	Key  string // 接收用户输入
+	Loop bool   // 表示是否循环的显示主菜单
 }
 
 // 显示主菜单
-func (cv *customerView) mainMenu() {
+func (cv *CustomerView) MainMenu() {
 	for {
 		fmt.Println("----------------客户信息管理软件----------------")
 		fmt.Println("                  1 添加客户")
@@ -18,8 +18,8 @@ func (cv *customerView) mainMenu() {
 		fmt.Println("                  4 客户列表")
 		fmt.Println("                  5 退    出")
 		fmt.Print("请选择(1-5):")
-		_, _ = fmt.Scanln(&cv.key)
-		switch cv.key {
+		_, _ = fmt.Scanln(&cv.Key)
+		switch cv.Key {
 		case "1":
 			fmt.Println("添加客户")
 		case "2":
@@ -29,11 +29,11 @@ func (cv *customerView) mainMenu() {
 		case "4":
 			fmt.Println("客户列表")
 		case "5":
-			cv.loop = false
+			cv.Loop = false
 		default:
 			fmt.Println("你的输入有误,请重新输入...")
 		}
-		if !cv.loop {
+		if !cv.Loop {
 			break
 		}
 	}
