@@ -63,7 +63,7 @@ func (cv *CustomerView) MainMenu() {
 		_, _ = fmt.Scanln(&cv.Key)
 		switch cv.Key {
 		case "1":
-			fmt.Println("添加客户")
+			cv.add()
 		case "2":
 			fmt.Println("修改客户")
 		case "3":

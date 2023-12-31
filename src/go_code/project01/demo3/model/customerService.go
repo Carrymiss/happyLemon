@@ -30,3 +30,27 @@ func (cs *CustomerService) Add(customer Customer) bool {
 	cs.customers = append(cs.customers, customer)
 	return true
 }
+
+// Delete 根据id删除客户(从切片中删除)
+func (cs *CustomerService) Delete(id int) bool {
+	// 先找到该客户对应的下标
+	index := cs.FindById(id)
+	if index == -1 {
+		return false
+	}
+	// 删除切片中的一个元素
+	cs.customers = append(cs.customers[:index], cs.customers[index+1:]...)
+	return true
+}
+
+// FindById 先找到该客户对应的下标
+func (cs *CustomerService) FindById(id int) int {
+	index := -1
+	// 遍历切片
+	for i := 0; i < len(cs.customers); i++ {
+		if cs.customers[i].Id == id {
+			index = i
+		}
+	}
+	return index
+}
