@@ -36,6 +36,7 @@ func test109() {
 	// 	println("n1=", n1)
 	// }
 	// 可以使用for-range方式
+	// 取的时候先进先出
 	close(intChan)
 	for v := range intChan {
 		println("v=", v)
