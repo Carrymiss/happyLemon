@@ -1,4 +1,4 @@
-package main
+package test
 
 import "testing"
 
@@ -13,11 +13,11 @@ func test104(n int) int {
 
 func Test1(t *testing.T) {
 	res := test104(10)
-	if res != 55 {
-		t.Fatalf("test104(10) error, expected:%v, actual:%v", 55, res)
+	if res != 56 {
+		t.Fatalf("test104(10) error, expected:%v, actual:%v", 56, res)
 	}
 	// 如果正确，输出日志
-	t.Logf("test104(10) success, expected:%v, actual:%v", 55, res)
+	t.Logf("test104(10) success, expected:%v, actual:%v", 56, res)
 	// 分割线
 	println("-------------分割线--------------")
 }
