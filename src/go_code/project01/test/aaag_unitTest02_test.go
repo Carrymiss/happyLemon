@@ -22,11 +22,17 @@ func Test2(t *testing.T) {
 }
 
 func Test3(t *testing.T) {
-	var monster domain.Monster
+	var monster = &domain.Monster{}
 	res := monster.ReStore()
 	if !res {
 		t.Fatalf("monster.ReStore() error , expected:%v, actual:%v", true, res)
 	}
+
+	// 进一步判断
+	if monster.Name != "牛魔王" {
+		t.Fatalf("monster.ReStore() error , expected:%v, actual:%v", "牛魔王", monster.Name)
+	}
+
 	t.Logf("monster.ReStore() success, expected:%v, actual:%v", true, res)
 	// 分割线
 	println("-------------分割线--------------")
