@@ -18,6 +18,7 @@ func main() {
 }
 
 type Monster1 struct {
+	// 指定序列化后的key
 	Name     string  `json:"name"`
 	Age      int     `json:"age"`
 	Skill    string  `json:"skill"`
