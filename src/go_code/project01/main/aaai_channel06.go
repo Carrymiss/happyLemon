@@ -10,7 +10,7 @@ func main() {
 	test116()
 
 	// select的使用
-	//test117()
+	test117()
 }
 
 func test116() {
@@ -25,9 +25,9 @@ func test116() {
 	println("-------------分割线--------------")
 
 	// 声明为只读
-	var chan2 <-chan int
-	num2 := <-chan2
-	println("num2=", num2)
+	//var chan2 <-chan int
+	//num2 := <-chan2
+	//println("num2=", num2)
 	// 分割线
 	println("-------------分割线--------------")
 }
