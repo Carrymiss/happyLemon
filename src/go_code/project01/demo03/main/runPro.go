@@ -1,6 +1,6 @@
 package main
 
-import "happyLemon/src/go_code/project01/demo3/model"
+import "happyLemon/src/go_code/project01/demo03/model"
 
 func main() {
 	// 运行项目
