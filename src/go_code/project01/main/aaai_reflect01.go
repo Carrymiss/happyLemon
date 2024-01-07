@@ -38,6 +38,8 @@ func test119(a interface{}) {
 	// 将interface{} 通过断言转成需要的类型
 	num2 := iV.(int)
 	fmt.Println("num2=", num2)
+	// 分割线
+	println("-------------分割线--------------")
 }
 
 type Student struct {
@@ -55,6 +57,13 @@ func test120(a interface{}) {
 
 	iV := rValue.Interface()
 	fmt.Printf("iV=%v iV的类型是%T\n", iV, iV)
+	stu, ok := iV.(Student)
+	if ok {
+		fmt.Println("stu.Name=", stu.Name)
+		fmt.Println("stu.Age=", stu.Age)
+	} else {
+		fmt.Println("转换失败")
+	}
 }
 
 func test121() {
