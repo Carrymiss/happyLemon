@@ -25,4 +25,15 @@ func test119(a interface{}) {
 	// 2. 获取到reflect.Value
 	rValue := reflect.ValueOf(a)
 	fmt.Println("rValue=", rValue)
+
+	// 上面的rValue其实是reflect.Value类型
+	// 我们可以通过rValue来获取对应的int，float32，string等等的原始类型
+	num := 1 + rValue.Int()
+	fmt.Println("num=", num)
+
+	// 下面我们将rValue转成interface{}
+	iV := rValue.Interface()
+	// 将interface{} 通过断言转成需要的类型
+	num2 := iV.(int)
+	fmt.Println("num2=", num2)
 }
