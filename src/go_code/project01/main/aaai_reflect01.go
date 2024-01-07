@@ -55,6 +55,11 @@ func test120(a interface{}) {
 	rValue := reflect.ValueOf(a)
 	fmt.Println("rValue=", rValue)
 
+	// 获取变量对应的kind
+	kind1 := rType.Kind()
+	kind2 := rValue.Kind()
+	fmt.Printf("kind1=%v kind2=%v\n", kind1, kind2)
+
 	iV := rValue.Interface()
 	fmt.Printf("iV=%v iV的类型是%T\n", iV, iV)
 	stu, ok := iV.(Student)
