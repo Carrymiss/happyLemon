@@ -32,6 +32,7 @@ func test106(n int) {
 
 func main() {
 	for i := 1; i <= 200; i++ {
+		// 开启多个协程
 		go test106(i)
 	}
 
