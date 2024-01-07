@@ -8,6 +8,8 @@ import (
 func main() {
 	// 反射
 	test118()
+	// 结构体的反射
+	test121()
 }
 
 func test118() {
@@ -36,4 +38,29 @@ func test119(a interface{}) {
 	// 将interface{} 通过断言转成需要的类型
 	num2 := iV.(int)
 	fmt.Println("num2=", num2)
+}
+
+type Student struct {
+	Name string
+	Age  int
+}
+
+// 对结构体的反射
+func test120(a interface{}) {
+	rType := reflect.TypeOf(a)
+	fmt.Println("rType=", rType)
+
+	rValue := reflect.ValueOf(a)
+	fmt.Println("rValue=", rValue)
+
+	iV := rValue.Interface()
+	fmt.Printf("iV=%v iV的类型是%T\n", iV, iV)
+}
+
+func test121() {
+	stu := Student{
+		Name: "tom",
+		Age:  20,
+	}
+	test120(stu)
 }
